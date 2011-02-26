@@ -1,0 +1,1 @@
+changeset = "\ncommit {node} (r{rev}) {branches}\nAuthor: {author}\nDate {date|rfc822date}\n\n\t{desc|tabindent}\n"

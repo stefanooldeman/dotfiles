@@ -1,0 +1,26 @@
+[ui]
+username=stefanooldeman <stefano.oldeman@gmail.com>
+verbose = True
+ignore=/Users/stefanooldeman/.hgignore_global
+style = ~/.hglog.style
+[merge-tools]
+sourcetreemerge.gui=False
+sourcetreemerge.premerge=False
+sourcetreemerge.executable=/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh
+sourcetreemerge.args="$local" "$other" -ancestor "$base" -merge "$output"
+sourcetreemerge.checkconflicts=True
+sourcetreemerge.binary=False
+[extdiff]
+opts.sourcetreediff=
+cmd.sourcetreediff=opendiff
+[extensions]
+hgext.graphlog=
+color=
+[color]
+mode            = auto
+status.modified = magenta bold
+status.added    = green bold
+status.removed  = red bold
+status.deleted  = cyan bold
+status.unknown  = blue bold
+status.ignored  = black bold
