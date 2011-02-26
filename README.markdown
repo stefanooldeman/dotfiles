@@ -1,11 +1,12 @@
 #### Restore backup
 
-Make sure (http://rubygems.org/gems/homesick "homesick") is installed
+Make sure [homesick](http://rubygems.org/gems/homesick "homesick is handles all your symlinks :] ") is installed
 
     #gem install homesick
     homesick clone stefanooldeman/dotfiles
     homesick symlink stefanooldeman/dotfiles
 
+tnx @technicalpickles with homesick
 
 #### For a quick use of any dotfile
 
@@ -18,4 +19,4 @@ you can follow these steps to synchronise them to another machine
     git submodule init
     git submodule update
 
-Credits: @nelstrom with his posts on vimcast.org
+tnx @nelstrom with his posts on vimcast.org
