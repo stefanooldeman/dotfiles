@@ -1,8 +1,11 @@
 #### Restore backup
 
-make sure gem homesick is installed
+Make sure (http://rubygems.org/gems/homesick "homesick") is installed
 
-* todo add install instructions for homesick clone + symlink
+    #gem install homesick
+    homesick clone stefanooldeman/dotfiles
+    homesick symlink stefanooldeman/dotfiles
+
 
 #### For a quick use of any dotfile
 
