@@ -26,8 +26,8 @@ set laststatus=2
 set number
 
 " Backups
-set backupdir=~/.vim/tmp/backup// " backups
-set directory=~/.vim/tmp/swap//   " swap files set backup
+set backupdir=~/.vim/tmp/bkp// " backups
+set directory=~/.vim/tmp/swp//   " swap files set backup
 
 " Tabs/spaces
 set tabstop=4
