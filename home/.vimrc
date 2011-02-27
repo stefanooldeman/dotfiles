@@ -24,6 +24,7 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set number
+set nowrap
 
 " Backups
 set backupdir=~/.vim/tmp/bkp// " backups
@@ -50,3 +51,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 if has("gui_running")
     set guioptions=egmrt
 endif
+
+" Commands
+command! -nargs=* Wrap set wrap linebreak nolist
