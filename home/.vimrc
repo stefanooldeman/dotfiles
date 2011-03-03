@@ -54,3 +54,7 @@ endif
 
 " Commands
 command! -nargs=* Wrap set wrap linebreak nolist
+
+"Autoload
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
