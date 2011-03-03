@@ -5,12 +5,12 @@ filetype plugin on
 filetype indent on
 
 " Key Shortcuts
-
 nmap <D-[> <<
 nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
 
+map <D-1> :NERDTreeToggle<CR>
 
 " Basic options
 set encoding=utf-8
