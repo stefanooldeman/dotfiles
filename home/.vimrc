@@ -13,6 +13,10 @@ vmap <D-]> >gv
 map <D-1> :NERDTreeToggle<CR>
 map <D-H> :set hls!<bar> set hls?<CR>
 
+" cmd+shift+,
+map <D-lt> :vsplit $MYVIMRC<CR>
+nmap <leader>l :set list!<CR> " Shortcut to rapidly toggle `set list`
+
 " Basic options
 set encoding=utf-8
 set scrolloff=3
@@ -35,12 +39,12 @@ set directory=~/.vim/tmp/swp//   " swap files set backup
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set expandtab
 
 " Visaul behaviour
 syntax on
 colorscheme blackboard
 set gfn=Bitsteam\ Vera\ Sans\ Mono\ 12  " Use the Bitstream font:
+set listchars=tab:▸\ ,eol:¬ " Use the same symbols as TextMate for tabstops and EOLs
 
 " Search
 set hlsearch
