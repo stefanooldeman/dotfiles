@@ -11,6 +11,7 @@ vmap <D-[> <gv
 vmap <D-]> >gv
 
 map <D-1> :NERDTreeToggle<CR>
+map <D-H> :set hls!<bar> set hls?<CR>
 
 " Basic options
 set encoding=utf-8
