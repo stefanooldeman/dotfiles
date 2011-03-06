@@ -1,6 +1,6 @@
 #lsexport MANPATH=/opt/local/share/man:$MANPATH #FAIL
-export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:~/Dev/PHP/lithium/labraries/lithium/console/li3:$PATH
-export DISPLAY=:0.0
+#export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:~/Dev/PHP/lithium/labraries/lithium/console/li3:$PATH
+#export DISPLAY=:0.0
 
 #terminal prompt line#
 export PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 30 ]; then CurDir=${DIR:0:12}...${DIR:${#DIR}-15}; else CurDir=$DIR; fi'
@@ -35,3 +35,6 @@ alias ping="ping -c 7"
 alias li3="~/Dev/PHP/lithium/libraries/lithium/console/li3"
 alias tree="~/.tree.sh"
 alias "gtree"="git log --graph --oneline --decorate"
+
+" Ubuntu
+alias xclip="xclip -sel clip <"
