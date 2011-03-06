@@ -36,5 +36,5 @@ alias li3="~/Dev/PHP/lithium/libraries/lithium/console/li3"
 alias tree="~/.tree.sh"
 alias "gtree"="git log --graph --oneline --decorate"
 
-" Ubuntu
+# Ubuntu
 alias xclip="xclip -sel clip <"
