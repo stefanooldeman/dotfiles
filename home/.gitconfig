@@ -2,7 +2,7 @@
 	name = stefanooldeman
 	email = stefano.oldeman@gmail.com
 [alias]
-	st = status
+	st = status --ignore-submodule
 [merge]
 	tool = opendiff
 [core]
