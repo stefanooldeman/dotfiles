@@ -4,3 +4,6 @@
 [submodule "home/.vim/bundle/taglist"]
 	path = home/.vim/bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "home/.vim/bundle/ctags"]
+	path = home/.vim/bundle/ctags
+	url = https://github.com/vim-scripts/ctags.vim--Johnson.git
