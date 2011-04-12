@@ -1,4 +1,5 @@
 #path export moved to .bashrc
+source ~/.bashrc
 
 #prompt line
 export PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 30 ]; then CurDir=${DIR:0:12}...${DIR:${#DIR}-15}; else CurDir=$DIR; fi'
