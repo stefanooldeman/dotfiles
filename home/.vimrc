@@ -46,6 +46,13 @@ colorscheme blackboard
 set gfn=Bitsteam\ Vera\ Sans\ Mono\ 12  " Use the Bitstream font:
 set listchars=tab:▸\ ,eol:¬ " Use the same symbols as TextMate for tabstops and EOLs
 
+"Taglist configuration
+let Tlist_Use_Right_Window = 1
+let Tlist_Enable_Fold_Column = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Use_SingleClick = 1
+let Tlist_Inc_Winwidth = 0
+
 " Search
 set hlsearch
 
