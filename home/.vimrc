@@ -11,12 +11,16 @@ vmap <D-[> <gv
 vmap <D-]> >gv
 
 map <D-1> :NERDTreeToggle<CR>
+map <D-3> :GundoToggle<CR>
+"todo on position cmd+4 show todo's marked in documents
+map <D-7> :Tlist<CR>
 map <D-H> :set hls!<bar> set hls?<CR> " toggle the search highlighting
 map <D-P> % " go to matching bracket
 
 " cmd+shift+,
 map <D-lt> :vsplit $MYVIMRC<CR>
 nmap <leader>l :set list!<CR> " Shortcut to rapidly toggle `set list`
+
 
 " Basic options
 set encoding=utf-8
