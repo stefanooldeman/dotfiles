@@ -11,7 +11,8 @@ vmap <D-[> <gv
 vmap <D-]> >gv
 
 map <D-1> :NERDTreeToggle<CR>
-map <D-H> :set hls!<bar> set hls?<CR>
+map <D-H> :set hls!<bar> set hls?<CR> " toggle the search highlighting
+map <D-P> % " go to matching bracket
 
 " cmd+shift+,
 map <D-lt> :vsplit $MYVIMRC<CR>
@@ -52,6 +53,9 @@ let Tlist_Enable_Fold_Column = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_SingleClick = 1
 let Tlist_Inc_Winwidth = 0
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Show_One_File = 1
+let Tlist_Display_Tag_Scope = 0
 
 " svndiff plugin
 let g:svndiff_autoupdate = 1
