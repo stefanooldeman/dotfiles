@@ -53,6 +53,16 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_SingleClick = 1
 let Tlist_Inc_Winwidth = 0
 
+" svndiff plugin
+let g:svndiff_autoupdate = 1
+let g:svndiff_one_sign_delete = 1
+noremap <D-8> :call Svndiff("prev")<CR>
+noremap <D-9> :call Svndiff("next")<CR>
+noremap <D-0> :call Svndiff("clear")<CR>
+hi DiffAdd      ctermfg=0 ctermbg=2 guibg='green'
+hi DiffDelete   ctermfg=0 ctermbg=1 guibg='red'
+hi DiffChange   ctermfg=0 ctermbg=3 guibg='yellow'
+
 " Search
 set hlsearch
 
