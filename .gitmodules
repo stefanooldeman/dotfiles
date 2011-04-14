@@ -4,3 +4,6 @@
 [submodule "home/.vim/bundle/taglist"]
 	path = home/.vim/bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "home/.vim/bundle/gundo"]
+	path = home/.vim/bundle/gundo
+	url = http://github.com/sjl/gundo.vim.git
