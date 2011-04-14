@@ -42,7 +42,7 @@ set softtabstop=4
 
 " Visaul behaviour
 syntax on
-colorscheme blackboard
+colorscheme ir_black
 set gfn=Bitsteam\ Vera\ Sans\ Mono\ 12  " Use the Bitstream font:
 set listchars=tab:▸\ ,eol:¬ " Use the same symbols as TextMate for tabstops and EOLs
 
