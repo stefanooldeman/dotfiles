@@ -15,7 +15,9 @@ map <D-3> :GundoToggle<CR>
 "todo on position cmd+4 show todo's marked in documents
 map <D-7> :Tlist<CR>
 map <D-H> :set hls!<bar> set hls?<CR> " toggle the search highlighting
-map <D-P> % " go to matching bracket
+" go to matching bracket
+nmap <D-P> %
+vmap <D-P> %
 
 " cmd+shift+,
 map <D-lt> :vsplit $MYVIMRC<CR>
@@ -48,8 +50,19 @@ set softtabstop=4
 " Visaul behaviour
 syntax on
 colorscheme ir_black
-set gfn=Bitsteam\ Vera\ Sans\ Mono\ 12  " Use the Bitstream font:
 set listchars=tab:▸\ ,eol:¬ " Use the same symbols as TextMate for tabstops and EOLs
+
+" Set font according to system
+if has("mac")
+  set gfn=Menlo:h12
+  set shell=/bin/bash
+elseif has("win32")
+  set gfn=Bitstream\ Vera\ Sans\ Mono:h10
+elseif has("unix")
+  set gfn=Monospace\ 10
+  set shell=/bin/bash
+endif
+
 
 "Taglist configuration
 let Tlist_Use_Right_Window = 1
@@ -62,14 +75,16 @@ let Tlist_Show_One_File = 1
 let Tlist_Display_Tag_Scope = 0
 
 " svndiff plugin
-let g:svndiff_autoupdate = 1
-let g:svndiff_one_sign_delete = 1
-noremap <D-8> :call Svndiff("prev")<CR>
-noremap <D-9> :call Svndiff("next")<CR>
-noremap <D-0> :call Svndiff("clear")<CR>
-hi DiffAdd      ctermfg=0 ctermbg=2 guibg='green'
-hi DiffDelete   ctermfg=0 ctermbg=1 guibg='red'
-hi DiffChange   ctermfg=0 ctermbg=3 guibg='yellow'
+if has("gui_running")
+	let g:svndiff_autoupdate = 1
+	let g:svndiff_one_sign_delete = 1
+	noremap <D-8> :call Svndiff("prev")<CR>
+	noremap <D-9> :call Svndiff("next")<CR>
+	noremap <D-0> :call Svndiff("clear")<CR>
+	hi DiffAdd      ctermfg=0 ctermbg=2 guibg='green'
+	hi DiffDelete   ctermfg=0 ctermbg=1 guibg='red'
+	hi DiffChange   ctermfg=0 ctermbg=3 guibg='yellow'
+end
 
 " Search
 set hlsearch
