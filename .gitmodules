@@ -22,6 +22,3 @@
 [submodule "home/.vim/bundle/coffee-script"]
 	path = home/.vim/bundle/coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "home/.vim/bundle/google-translator"]
-	path = home/.vim/bundle/google-translator
-	url = https://github.com/vim-scripts/Google-translator.git
