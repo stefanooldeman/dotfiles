@@ -91,6 +91,7 @@ set hlsearch
 
 " escaping whitespace on save.
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufNewFile,BufRead *.less set filetype=less
 
 " No more toolbar
 if has("gui_running")
