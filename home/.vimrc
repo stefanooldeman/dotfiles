@@ -86,6 +86,11 @@ if has("gui_running")
 	hi DiffChange   ctermfg=0 ctermbg=3 guibg='yellow'
 end
 
+" php-doc plugin
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
+
 " Search
 set hlsearch
 
