@@ -18,7 +18,6 @@ map <D-7> :Tlist<CR>
 nmap <D-P> %
 vmap <D-P> %
 
-" cmd+shift+,
 " Search
 " Make case-insensitive search the norm
 set ignorecase
@@ -27,6 +26,12 @@ set hlsearch
 " toggle the search highlighting (netbeans style: cmd+shift+h)
 map <D-H> :set hls!<bar> set hls?<CR> 
 
+" vimcasts #24
+" Auto-reload vimrc on save
+if has("autocmd")
+    autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+" Load vimrc in virtical split window with cmd+shift+comma
 map <D-lt> :vsplit $MYVIMRC<CR>
 nmap <leader>l :set list!<CR> " Shortcut to rapidly toggle `set list`
 
