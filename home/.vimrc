@@ -35,6 +35,15 @@ endif
 map <D-lt> :vsplit $MYVIMRC<CR>
 nmap <leader>l :set list!<CR> " Shortcut to rapidly toggle `set list`
 
+" The escape key is a long ways away. This maps it to the sequence jj
+:map! jj <esc>
+
+" Similarly, : takes two keystrokes, ; takes one; map the latter to the former
+" in normal mode to get to the commandline faster
+nnoremap ; :
+
+" TextMate’s “save on losing focus” feature.
+au FocusLost * :wa
 
 " Basic options
 set encoding=utf-8
