@@ -22,3 +22,6 @@
 [submodule "home/.vim/bundle/php-doc"]
 	path = home/.vim/bundle/php-doc
 	url = https://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
+[submodule "home/.vim/bundle/nerdcommenter"]
+	path = home/.vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
