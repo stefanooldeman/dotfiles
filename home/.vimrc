@@ -13,7 +13,10 @@ vmap <D-]> >gv
 map <D-1> :NERDTreeToggle<CR>
 map <D-3> :GundoToggle<CR>
 "todo on position cmd+4 show todo's marked in documents
-map <D-7> :Tlist<CR>
+" PHP parser check (CMD-5)
+autocmd FileType php noremap <D-5> :!/usr/bin/php -l %<CR>
+map <D-7> <ESC>:Tlist<CR>
+
 " go to matching bracket
 nmap <D-P> %
 vmap <D-P> %
@@ -33,6 +36,9 @@ if has("autocmd")
 endif
 " Load vimrc in virtical split window with cmd+shift+comma
 map <D-lt> :vsplit $MYVIMRC<CR>
+
+" vimcast #1
+" Show invisibles
 nmap <leader>l :set list!<CR> " Shortcut to rapidly toggle `set list`
 
 " The escape key is a long ways away. This maps it to the sequence jj
