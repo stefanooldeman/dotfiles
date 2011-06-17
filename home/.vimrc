@@ -14,12 +14,19 @@ map <D-1> :NERDTreeToggle<CR>
 map <D-3> :GundoToggle<CR>
 "todo on position cmd+4 show todo's marked in documents
 map <D-7> :Tlist<CR>
-map <D-H> :set hls!<bar> set hls?<CR> " toggle the search highlighting
 " go to matching bracket
 nmap <D-P> %
 vmap <D-P> %
 
 " cmd+shift+,
+" Search
+" Make case-insensitive search the norm
+set ignorecase
+set smartcase
+set hlsearch
+" toggle the search highlighting (netbeans style: cmd+shift+h)
+map <D-H> :set hls!<bar> set hls?<CR> 
+
 map <D-lt> :vsplit $MYVIMRC<CR>
 nmap <leader>l :set list!<CR> " Shortcut to rapidly toggle `set list`
 
@@ -63,7 +70,6 @@ elseif has("unix")
   set shell=/bin/bash
 endif
 
-
 "Taglist configuration
 let Tlist_Use_Right_Window = 1
 let Tlist_Enable_Fold_Column = 1
@@ -90,9 +96,6 @@ end
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
 nnoremap <C-P> :call PhpDocSingle()<CR>
 vnoremap <C-P> :call PhpDocRange()<CR>
-
-" Search
-set hlsearch
 
 " escaping whitespace on save.
 "autocmd BufWritePre * :%s/\s\+$//e
