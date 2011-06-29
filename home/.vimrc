@@ -4,6 +4,9 @@ filetype on                          " set filetype stuff to on
 filetype plugin on
 filetype indent on
 
+" 'sudo' save:
+cmap w!! %!sudo tee > /dev/null %
+
 " Key Shortcuts
 nmap <D-[> <<
 nmap <D-]> >>
