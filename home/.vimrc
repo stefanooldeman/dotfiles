@@ -13,6 +13,12 @@ nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
 
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
 map <D-1> :NERDTreeToggle<CR>
 map <D-3> :GundoToggle<CR>
 "todo on position cmd+4 show todo's marked in documents
