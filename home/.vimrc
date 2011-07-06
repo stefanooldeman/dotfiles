@@ -117,9 +117,9 @@ if has("gui_running")
 end
 
 " php-doc plugin
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocRange()<CR>
+inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-D> :call PhpDocSingle()<CR>
+vnoremap <C-D> :call PhpDocRange()<CR>
 
 " escaping whitespace on save.
 "autocmd BufWritePre * :%s/\s\+$//e
