@@ -8,8 +8,9 @@ export PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 30 ]; the
 PS1=" \$CurDir:) "
 
 #todo make colours work under ubuntu and osx: alias ls="ls -laG"
-alias ls="ls -lG"
-alias lsd="ls -laG"
+alias ls="ls -lGh"
+alias lsd="ls -laGh"
 alias ping="ping -c 7"
 alias tree="~/.tree.sh"
 alias "gtree"="git log --graph --oneline --decorate"
+source ~/.git-completion.bash
