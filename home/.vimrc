@@ -73,9 +73,10 @@ set backupdir=~/.vim/tmp/bkp// " backups
 set directory=~/.vim/tmp/swp//   " swap files set backup
 
 " Tabs/spaces
+set expandtab
+set smartindent
 set tabstop=4
 set shiftwidth=4
-set softtabstop=4
 
 " Visaul behaviour
 syntax on
