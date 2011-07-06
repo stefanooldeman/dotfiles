@@ -69,8 +69,10 @@ set number
 set nowrap
 
 " Backups
-set backupdir=~/.vim/tmp/bkp// " backups
-set directory=~/.vim/tmp/swp//   " swap files set backup
+set noswapfile
+set nobackup
+" set backupdir=~/.vim/tmp/bkp// " backups
+" set directory=~/.vim/tmp/swp//   " swap files set backup
 
 " Tabs/spaces
 set expandtab
