@@ -16,3 +16,6 @@
 [submodule "home/.vim/bundle/php-doc"]
 	path = home/.vim/bundle/php-doc
 	url = https://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
+[submodule "home/.vim/bundle/minibufexpl"]
+	path = home/.vim/bundle/minibufexpl
+	url = https://github.com/fholgado/minibufexpl.vim.git
