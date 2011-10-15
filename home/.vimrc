@@ -88,7 +88,7 @@ set shiftwidth=4
 
 " Visaul behaviour
 syntax on
-colorscheme ir_black
+colorscheme jellybeans
 set listchars=tab:▸\ ,eol:¬ " Use the same symbols as TextMate for tabstops and EOLs
 
 " Set font according to system
