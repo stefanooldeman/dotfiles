@@ -19,3 +19,6 @@
 [submodule "home/.vim/bundle/minibufexpl"]
 	path = home/.vim/bundle/minibufexpl
 	url = https://github.com/fholgado/minibufexpl.vim.git
+[submodule "home/.vim/bundle/jellybeans.vim"]
+	path = home/.vim/bundle/jellybeans.vim
+	url = https://github.com/nanotech/jellybeans.vim.git
