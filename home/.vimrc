@@ -24,6 +24,7 @@ map <D-3> :GundoToggle<CR>
 "todo on position cmd+4 show todo's marked in documents
 " PHP parser check (CMD-5)
 autocmd FileType php noremap <D-5> :!/usr/bin/php -l %<CR>
+autocmd FileType xsd,xml noremap <D-5> :!/usr/bin/xmllint %<CR>
 map <D-7> <ESC>:Tlist<CR>
 
 " go to matching bracket
@@ -56,9 +57,6 @@ nmap <leader>l :set list!<CR> " Shortcut to rapidly toggle `set list`
 " Similarly, : takes two keystrokes, ; takes one; map the latter to the former
 " in normal mode to get to the commandline faster
 nnoremap ; :
-
-" TextMate’s “save on losing focus” feature.
-au FocusLost * :wa
 
 " Basic options
 set encoding=utf-8
