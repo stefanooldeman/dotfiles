@@ -3,11 +3,12 @@
 	email = stefano.oldeman@gmail.com
 [alias]
 	st = status --ignore-submodule
+    gtree = log --graph --oneline --decorate
 [merge]
 	tool = opendiff
 [core]
 	excludesfiles = /Users/stefanooldeman/.gitignore_global
-	excludesfile = /Users/stefanooldeman/.gitignore_global
+	excludesfile = /Users/stefano/.gitignore_global
 	quotepath = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"

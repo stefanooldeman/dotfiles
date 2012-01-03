@@ -58,6 +58,9 @@ nmap <leader>l :set list!<CR> " Shortcut to rapidly toggle `set list`
 " in normal mode to get to the commandline faster
 nnoremap ; :
 
+" TextMate’s “save on losing focus” feature.
+" au FocusLost * :wa
+
 " Basic options
 set encoding=utf-8
 set scrolloff=3
