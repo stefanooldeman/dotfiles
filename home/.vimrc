@@ -24,6 +24,7 @@ map <D-3> :GundoToggle<CR>
 "todo on position cmd+4 show todo's marked in documents
 " PHP parser check (CMD-5)
 autocmd FileType php noremap <D-5> :!/usr/bin/php -l %<CR>
+autocmd FileType xsd,xml noremap <D-5> :!/usr/bin/xmllint %<CR>
 map <D-7> <ESC>:Tlist<CR>
 
 " go to matching bracket
