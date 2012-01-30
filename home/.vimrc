@@ -94,24 +94,35 @@ set listchars=tab:▸\ ,eol:¬ " Use the same symbols as TextMate for tabstops a
 
 " Set font according to system
 if has("mac")
-  set gfn=Menlo:h12
-  set shell=/bin/bash
+    set gfn=Menlo:h12
+    set shell=/bin/bash
 elseif has("win32")
-  set gfn=Bitstream\ Vera\ Sans\ Mono:h10
+      set gfn=Bitstream\ Vera\ Sans\ Mono:h10
 elseif has("unix")
-  set gfn=Monospace\ 10
-  set shell=/bin/bash
+      set gfn=Monospace\ 10
+      set shell=/bin/bash
 endif
 
-"Taglist configuration
-let Tlist_Use_Right_Window = 1
-let Tlist_Enable_Fold_Column = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Use_SingleClick = 1
-let Tlist_Inc_Winwidth = 0
+
+if has('gui_running')
+    " patch fonts for vim-powerline plugin
+    set transparency=5        " set transparent window
+endif
+" Powerline again
+let g:Powerline_symbols = 'fancy' 
+
+" Tlist configuration
 let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Close_On_Select = 0
+let Tlist_Auto_Update = 0
+let Tlist_Process_File_Always = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_WinWidth = 40
 let Tlist_Show_One_File = 1
-let Tlist_Display_Tag_Scope = 0
+let Tlist_Show_Menu = 0
+let Tlist_File_Fold_Auto_Close = 0
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+let tlist_css_settings = 'css;e:SECTIONS'
 
 " svndiff plugin
 if has("gui_running")
