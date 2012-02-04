@@ -103,14 +103,6 @@ elseif has("unix")
       set shell=/bin/bash
 endif
 
-
-if has('gui_running')
-    " patch fonts for vim-powerline plugin
-    set transparency=5        " set transparent window
-endif
-" Powerline again
-let g:Powerline_symbols = 'fancy' 
-
 " Tlist configuration
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_On_Select = 0
