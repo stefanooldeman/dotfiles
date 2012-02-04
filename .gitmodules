@@ -19,3 +19,9 @@
 [submodule "home/.vim/bundle/jellybeans.vim"]
 	path = home/.vim/bundle/jellybeans.vim
 	url = https://github.com/nanotech/jellybeans.vim.git
+[submodule "home/.vim/bundle/vim-snipmate"]
+	path = home/.vim/bundle/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "home/.vim/bundle/vim-powerline"]
+	path = home/.vim/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
