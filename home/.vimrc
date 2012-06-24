@@ -4,6 +4,9 @@ filetype on                          " set filetype stuff to on
 filetype plugin on
 filetype indent on
 
+" Hide ^M characters which occur at the end of a line
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+
 " 'sudo' save:
 cmap w!! %!sudo tee > /dev/null %
 
@@ -18,6 +21,14 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" delete without saving to register
+nnoremap d "_d
+vnoremap d "_d
+
+" replace currently selected text with default register
+" without yanking it
+vnoremap p "_dP
 
 map <D-1> :NERDTreeToggle<CR>
 map <D-3> :GundoToggle<CR>
@@ -144,6 +155,8 @@ endif
 
 " Commands
 command! -nargs=* Wrap set wrap linebreak nolist
+
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
 "Autoload
 call pathogen#runtime_append_all_bundles()
