@@ -127,18 +127,6 @@ let Tlist_File_Fold_Auto_Close = 0
 let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 let tlist_css_settings = 'css;e:SECTIONS'
 
-" svndiff plugin
-if has("gui_running")
-	let g:svndiff_autoupdate = 1
-	let g:svndiff_one_sign_delete = 1
-	noremap <D-8> :call Svndiff("prev")<CR>
-	noremap <D-9> :call Svndiff("next")<CR>
-	noremap <D-0> :call Svndiff("clear")<CR>
-	hi DiffAdd      ctermfg=0 ctermbg=2 guibg='green'
-	hi DiffDelete   ctermfg=0 ctermbg=1 guibg='red'
-	hi DiffChange   ctermfg=0 ctermbg=3 guibg='yellow'
-end
-
 " php-doc plugin
 inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i
 nnoremap <C-D> :call PhpDocSingle()<CR>
