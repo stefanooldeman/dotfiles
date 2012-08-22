@@ -102,6 +102,14 @@ set shiftwidth=4
 syntax on
 colorscheme jellybeans
 set listchars=tab:▸\ ,eol:¬ " Use the same symbols as TextMate for tabstops and EOLs
+" Powerline
+" setting nocompatible (at the top of file)
+set t_Co=256
+set laststatus=2
+let g:Powerline_symbols='unicode' " 'fancy' will also work and makes better use of patched fonts
+if has('gui_running')
+    set transparency=5        " set transparent window
+endif
 
 " Set font according to system
 if has("mac")
