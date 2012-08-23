@@ -34,3 +34,6 @@
 [submodule "home/.vim/bundle/tasklist"]
 	path = home/.vim/bundle/tasklist
 	url = git://github.com/vim-scripts/TaskList.vim.git
+[submodule "home/.vim/bundle/command-t"]
+	path = home/.vim/bundle/command-t
+	url = git://github.com/wincent/Command-T.git
