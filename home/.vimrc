@@ -35,7 +35,7 @@ noremap * *N
 
 map <Leader>1 :NERDTreeToggle<CR>
 map <Leader>3 :GundoToggle<CR>
-"todo on position cmd+4 show todo's marked in documents
+map <leader>4 <Plug>TaskList
 " PHP parser check (CMD-5)
 autocmd FileType php noremap <Leader>5 :!/usr/bin/php -l %<CR>
 autocmd FileType xsd,xml noremap <Leader>5 :!/usr/bin/xmllint %<CR>
