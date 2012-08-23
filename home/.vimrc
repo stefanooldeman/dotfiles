@@ -32,6 +32,8 @@ vnoremap p "_dP
 
 " start at the current search hit (prevent jumping to end of file)
 noremap * *N
+" don't go to the line-ending char
+vnoremap $ $h
 
 map <Leader>1 :NERDTreeToggle<CR>
 map <Leader>3 :GundoToggle<CR>
