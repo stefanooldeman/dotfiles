@@ -31,3 +31,6 @@
 [submodule "home/.vim/bundle/liquid-syntax"]
 	path = home/.vim/bundle/liquid-syntax
 	url = git://github.com/tpope/vim-liquid.git
+[submodule "home/.vim/bundle/tasklist"]
+	path = home/.vim/bundle/tasklist
+	url = git://github.com/vim-scripts/TaskList.vim.git
