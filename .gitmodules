@@ -1,33 +1,33 @@
 [submodule "home/.vim/bundle/nerdtree"]
 	path = home/.vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
+	url = git://github.com/scrooloose/nerdtree.git
 [submodule "home/.vim/bundle/taglist"]
 	path = home/.vim/bundle/taglist
-	url = https://github.com/vim-scripts/taglist.vim.git
+	url = git://github.com/vim-scripts/taglist.vim.git
 [submodule "home/.vim/bundle/gundo"]
 	path = home/.vim/bundle/gundo
-	url = http://github.com/sjl/gundo.vim.git
+	url = git://github.com/sjl/gundo.vim.git
 [submodule "home/.vim/bundle/fugitive"]
 	path = home/.vim/bundle/fugitive
-	url = https://github.com/tpope/vim-fugitive.git
+	url = git://github.com/tpope/vim-fugitive.git
 [submodule "home/.vim/bundle/php-doc"]
 	path = home/.vim/bundle/php-doc
-	url = https://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
+	url = git://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
 [submodule "home/.vim/bundle/minibufexpl"]
 	path = home/.vim/bundle/minibufexpl
-	url = https://github.com/fholgado/minibufexpl.vim.git
+	url = git://github.com/fholgado/minibufexpl.vim.git
 [submodule "home/.vim/bundle/jellybeans.vim"]
 	path = home/.vim/bundle/jellybeans.vim
-	url = https://github.com/nanotech/jellybeans.vim.git
+	url = git://github.com/nanotech/jellybeans.vim.git
 [submodule "home/.vim/bundle/vim-snipmate"]
 	path = home/.vim/bundle/vim-snipmate
-	url = https://github.com/garbas/vim-snipmate.git
+	url = git://github.com/garbas/vim-snipmate.git
 [submodule "home/.vim/bundle/vim-powerline"]
 	path = home/.vim/bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
+	url = git://github.com/Lokaltog/vim-powerline.git
 [submodule "home/.vim/bundle/snipmate-snippets"]
     path = home/.vim/bundle/snipmate-snippets
-    url = https://github.com/honza/snipmate-snippets.git
+    url = git://github.com/honza/snipmate-snippets.git
 [submodule "home/.vim/bundle/liquid-syntax"]
 	path = home/.vim/bundle/liquid-syntax
 	url = git://github.com/tpope/vim-liquid.git
