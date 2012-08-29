@@ -37,3 +37,6 @@
 [submodule "home/.vim/bundle/command-t"]
 	path = home/.vim/bundle/command-t
 	url = git://github.com/wincent/Command-T.git
+[submodule "home/.vim/bundle/jslint"]
+	path = home/.vim/bundle/jslint
+	url = git://github.com/hallettj/jslint.vim.git
