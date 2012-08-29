@@ -4,6 +4,7 @@
 [alias]
 	st = status --ignore-submodule
     gtree = log --graph --oneline --decorate
+    log = log --decorate
 [merge]
 	tool = opendiff
 [core]
