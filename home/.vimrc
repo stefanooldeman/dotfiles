@@ -35,14 +35,18 @@ noremap * *N
 " don't go to the line-ending char
 vnoremap $ $h
 
-map <Leader>1 :NERDTreeToggle<CR>
-map <Leader>3 :GundoToggle<CR>
-map <leader>4 <Plug>TaskList
+noremap <Leader>0 :set nonumber!<CR>:set foldcolumn=0<CR>
+noremap <Leader>1 :NERDTreeToggle<CR>
+noremap <Leader>3 :GundoToggle<CR>
+noremap <leader>4 <Plug>TaskList
 " PHP parser check (CMD-5)
 autocmd FileType php noremap <Leader>5 :!/usr/bin/php -l %<CR>
 autocmd FileType xsd,xml noremap <Leader>5 :!/usr/bin/xmllint %<CR>
 autocmd FileType py noremap <Leader>5 :!/usr/local/bin/pep8 --show-source --show-pep8 %<CR>
-map <Leader>7 <ESC>:Tlist<CR>
+if has('gui_running')
+    autocmd FileType javascript,js noremap <Leader>5 :ToggleJSLint<CR>
+endif
+noremap <Leader>7 <ESC>:Tlist<CR>
 
 " Search
 " Make case-insensitive search the norm
