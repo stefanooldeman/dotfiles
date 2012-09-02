@@ -54,7 +54,7 @@ set ignorecase
 set smartcase
 set hlsearch
 " toggle the search highlighting (netbeans style: cmd+shift+h)
-map <Leader>h :set hls!<bar> set hls?<CR> 
+map <Leader>h :set hls!<bar> set hls?<CR>
 
 " vimcasts #24
 " Auto-reload vimrc on save
@@ -103,6 +103,23 @@ syntax on
 colorscheme jellybeans
 set listchars=tab:▸\ ,eol:¬ " Use the same symbols as TextMate for tabstops and EOLs
 
+" Spell checking
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+
+" JSlint plugin configuration
+let JSLintHighlightErrorLine=0
+
+command! -n=0 -bar ToggleJSLint call s:toggle_js_lint()
+func! s:toggle_js_lint()
+    " toglle the visuals
+    if g:JSLintHighlightErrorLine == 1
+        let g:JSLintHighlightErrorLine = 0
+    else
+        let g:JSLintHighlightErrorLine = 1
+    endif
+endfunc
+
 " Powerline
 set t_Co=256
 set laststatus=2
@@ -139,9 +156,9 @@ let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 let tlist_css_settings = 'css;e:SECTIONS'
 
 " php-doc plugin
-inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i
-nnoremap <C-D> :call PhpDocSingle()<CR>
-vnoremap <C-D> :call PhpDocRange()<CR>
+inoremap <Leader>D <ESC>:call PhpDocSingle()<CR>i
+nnoremap <Leader>D :call PhpDocSingle()<CR>
+vnoremap <Leader>D> :call PhpDocRange()<CR>
 
 " escaping whitespace on save.
 "autocmd BufWritePre * :%s/\s\+$//e
