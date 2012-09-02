@@ -154,5 +154,12 @@ command! -nargs=* Wrap set wrap linebreak nolist
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
 "Autoload
-call pathogen#runtime_append_all_bundles()
+" To disable a plugin, add it's bundle name to the following list
+let g:pathogen_disabled = []
+
+" for some reason the jslint plugin is not compatible within the terminal
+if !has('gui_running')
+    call add(g:pathogen_disabled, 'jslint')
+endif
+call pathogen#infect()
 call pathogen#helptags()
