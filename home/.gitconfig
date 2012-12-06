@@ -2,8 +2,9 @@
 	name = stefanooldeman
 	email = stefano.oldeman@gmail.com
 [alias]
+	s = status --ignore-submodule
 	st = status --ignore-submodule
-    gtree = log --graph --oneline --decorate
+    tree = log --graph --oneline --decorate
     log = log --decorate
 [merge]
 	tool = opendiff
@@ -43,5 +44,5 @@
     whitespace = red reverse
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	editor = mvim -f
+	editor = vim
 	autocrlf = input

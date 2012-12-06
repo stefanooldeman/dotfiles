@@ -22,9 +22,24 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Map alt+ hjkl to arrow keys, to move in insert mode
+if has('gui_running')
+    :set invmmta
+endif
+imap <M-h> <Left>
+imap <M-j> <Down>
+imap <M-k> <Up>
+imap <M-l> <Right>
+" jump words in insert mode
+imap <M-w> <C-Right>
+imap <M-b> <C-Left>
+
 " delete without saving to register
 nnoremap d "_d
 vnoremap d "_d
+
+nnoremap s "_s
+vnoremap s "_s
 
 " replace currently selected text with default register
 " without yanking it
@@ -38,14 +53,11 @@ vnoremap $ $h
 noremap <Leader>0 :set nonumber!<CR>:set foldcolumn=0<CR>
 noremap <Leader>1 :NERDTreeToggle<CR>
 noremap <Leader>3 :GundoToggle<CR>
-noremap <leader>4 <Plug>TaskList
+map <leader>4 <Plug>TaskList
 " PHP parser check (CMD-5)
 autocmd FileType php noremap <Leader>5 :!/usr/bin/php -l %<CR>
 autocmd FileType xsd,xml noremap <Leader>5 :!/usr/bin/xmllint %<CR>
 autocmd FileType py noremap <Leader>5 :!/usr/local/bin/pep8 --show-source --show-pep8 %<CR>
-if has('gui_running')
-    autocmd FileType javascript,js noremap <Leader>5 :ToggleJSLint<CR>
-endif
 noremap <Leader>7 <ESC>:Tlist<CR>
 
 " Search
@@ -63,7 +75,7 @@ if has("autocmd")
 endif
 
 " The escape key is a long ways away. This maps it to the sequence jj
-:map! jj <esc>
+:noremap! jj <esc>l
 
 " Similarly, : takes two keystrokes, ; takes one; map the latter to the former
 " in normal mode to get to the commandline faster
@@ -120,12 +132,16 @@ func! s:toggle_js_lint()
     endif
 endfunc
 
+if has('gui_running')
+    autocmd FileType javascript,js noremap <Leader>5 :ToggleJSLint<CR>
+endif
+
 " Powerline
 set t_Co=256
 set laststatus=2
 let g:Powerline_symbols='unicode' " 'fancy' will also work and makes better use of patched fonts
 if has('gui_running')
-    set transparency=5        " set transparent window
+    set transparency=1        " set transparent window
 endif
 
 " Set font according to system
@@ -141,6 +157,8 @@ endif
 
 " NERDtree configuration
 let NERDTreeWinSize=30
+let NERDTreeIgnore = ['\.pyc$']
+" let NERDTreeSortOrder=[]
 
 " Tlist configuration
 let Tlist_GainFocus_On_ToggleOpen = 1
