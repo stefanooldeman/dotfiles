@@ -1,0 +1,4 @@
+distribute==0.6.34
+ipython==0.13.1
+numpy==1.6.2
+virtualenvwrapper==3.6
