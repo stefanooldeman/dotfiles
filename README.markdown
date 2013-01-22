@@ -8,6 +8,14 @@ Make sure [homesick](http://rubygems.org/gems/homesick "homesick is handles all 
 
 tnx @technicalpickles with homesick
 
+to use z-shell do:
+
+    chsh -s `which zsh`
+    # or if you're not sure then:
+    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
+Virtualenv and zsh, go read here: http://virtualenvwrapper.readthedocs.org/en/latest/tips.html#zsh-prompt
+
 #### For a quick use of any dotfile
 
 you can follow these steps to synchronise them to another machine
