@@ -12,6 +12,8 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 nmap <leader>l :set list!<CR> " Shortcut to rapidly toggle `set list`
 " Load vimrc in virtical split window with cmd+shift+comma
 map <leader>, :vsplit $MYVIMRC<CR>
+" No autoindent for the current file
+map <leader>8 :setl noai nocin nosi inde=<CR>
 
 " 'sudo' save:
 cmap w!! %!sudo tee > /dev/null %
@@ -26,13 +28,15 @@ map <C-l> <C-w>l
 if has('gui_running')
     :set invmmta
 endif
-imap <M-h> <Left>
-imap <M-j> <Down>
-imap <M-k> <Up>
-imap <M-l> <Right>
-" jump words in insert mode
-imap <M-w> <C-Right>
-imap <M-b> <C-Left>
+
+" moving in insert mode with alt- as prefix (somewhat stupid)
+" imap <M-h> <Left>
+" imap <M-j> <Down>
+" imap <M-k> <Up>
+" imap <M-l> <Right>
+" " jump words in insert mode
+" imap <M-w> <C-Right>
+" imap <M-b> <C-Left>
 
 " delete without saving to register
 nnoremap d "_d
@@ -65,6 +69,7 @@ noremap <Leader>7 <ESC>:Tlist<CR>
 set ignorecase
 set smartcase
 set hlsearch
+set incsearch
 " toggle the search highlighting (netbeans style: cmd+shift+h)
 map <Leader>h :set hls!<bar> set hls?<CR>
 
@@ -73,16 +78,6 @@ map <Leader>h :set hls!<bar> set hls?<CR>
 if has("autocmd")
     autocmd bufwritepost .vimrc source $MYVIMRC
 endif
-
-" The escape key is a long ways away. This maps it to the sequence jj
-:noremap! jj <esc>l
-
-" Similarly, : takes two keystrokes, ; takes one; map the latter to the former
-" in normal mode to get to the commandline faster
-nnoremap ; :
-
-" TextMate’s “save on losing focus” feature.
-" au FocusLost * :wa
 
 " Basic options
 set encoding=utf-8
@@ -181,6 +176,7 @@ vnoremap <Leader>D> :call PhpDocRange()<CR>
 " escaping whitespace on save.
 "autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufNewFile,BufRead *.less set filetype=less
+autocmd BufNewFile,BufRead *.ngx set filetype=nginx
 
 " No more toolbar
 if has("gui_running")
