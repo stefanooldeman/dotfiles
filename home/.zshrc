@@ -48,11 +48,7 @@ MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
-#source this file after switching with pythonbrew and it will work
-export PYTHON_DIR=$(dirname $(which python))
-export VIRTUALENVWRAPPER_PYTHON=$PYTHON_DIR/python
-source $PYTHON_DIR/virtualenvwrapper.sh
-plugins=(brew osx git redis-cli pip virtualenvwrapper)
+plugins=(brew osx git redis-cli pip)
 
 alias ls="ls -lah --color"
 alias mongostart="mongod run --config /usr/local/Cellar/mongodb/2.0.0-x86_64/mongod.conf"
