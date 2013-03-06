@@ -49,3 +49,6 @@
 [submodule "home/.vim/bundle/nginx-syntax"]
 	path = home/.vim/bundle/nginx-syntax
 	url = git@github.com:evanmiller/nginx-vim-syntax.git
+[submodule ".vim/bundle/gitgutter"]
+	path = .vim/bundle/gitgutter
+	url = git@github.com:airblade/vim-gitgutter.git
