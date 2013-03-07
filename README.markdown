@@ -1,4 +1,4 @@
-#### Restore backup
+# Restore backup
 
 Make sure [homesick](http://rubygems.org/gems/homesick "homesick is handles all your symlinks :] ") is installed
 
@@ -8,7 +8,7 @@ Make sure [homesick](http://rubygems.org/gems/homesick "homesick is handles all 
 
 tnx @technicalpickles with homesick
 
-to use z-shell do:
+## use z-shell do:
 
     chsh -s `which zsh`
     # or if you're not sure then:
@@ -16,15 +16,23 @@ to use z-shell do:
 
 Virtualenv and zsh, go read here: http://virtualenvwrapper.readthedocs.org/en/latest/tips.html#zsh-prompt
 
-#### For a quick use of any dotfile
+## jslint usage in vim
+
+    ln -s dotfiles/usr/bin/jslint /usr/bin/jslint
+
+from within vim:
+
+    !jslint %
+
+ensure that the plugin downloaded and enabled in vim. normally in ~/.vim/bundle/jslint
+
+# For a quick use of any dotfile
 
 you can follow these steps to synchronise them to another machine
 
     cd ~
-    git clone http://github.com/stefanooldeman/dotvim.git stefanooldeman/dotfiles
-    ln -s ~/stefanooldeman/dotfiles/home/.vim/vimrc ~/.vimrc
-    cd ~/stefanooldeman/dotfiles/.vim
-    git submodule init
-    git submodule update
+    git clone http://github.com/stefanooldeman/dotfiles.git
+    cd dotfiles && git submodule update --init
+    ln -s home/.vim/vimrc ~/.vimrc
 
 tnx @nelstrom with his posts on vimcast.org
