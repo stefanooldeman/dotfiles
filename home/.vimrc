@@ -4,8 +4,6 @@ filetype on                          " set filetype stuff to on
 filetype plugin on
 filetype indent on
 
-let mapleader = ","
-
 " Hide ^M characters which occur at the end of a line
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 " Show invisibles
