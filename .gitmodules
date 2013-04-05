@@ -52,3 +52,9 @@
 [submodule "home/.vim/bundle/gitgutter"]
 	path = home/.vim/bundle/gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
+[submodule "home/.vim/bundle/vim-addon-mw-utils"]
+	path = home/.vim/bundle/vim-addon-mw-utils
+	url = git@github.com:MarcWeber/vim-addon-mw-utils.git
+[submodule "home/.vim/bundle/tlib"]
+	path = home/.vim/bundle/tlib
+	url = git@github.com:vim-scripts/tlib.git
