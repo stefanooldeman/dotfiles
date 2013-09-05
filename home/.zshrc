@@ -50,7 +50,6 @@ export PATH=~/dev/riak-1.3.0/dev/dev2/bin:$PATH
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
 plugins=(brew osx redis-cli pip virtualenv)
 
-#alias ls="ls -lah --color"
 alias mongostart="mongod run --config /usr/local/Cellar/mongodb/2.0.0-x86_64/mongod.conf"
 alias ping="ping -c 7"
 alias gitx="open . -a gitx"
