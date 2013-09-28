@@ -19,9 +19,6 @@
 [submodule "home/.vim/bundle/jellybeans.vim"]
 	path = home/.vim/bundle/jellybeans.vim
 	url = git://github.com/nanotech/jellybeans.vim.git
-[submodule "home/.vim/bundle/vim-snipmate"]
-	path = home/.vim/bundle/vim-snipmate
-	url = git://github.com/garbas/vim-snipmate.git
 [submodule "home/.vim/bundle/vim-powerline"]
 	path = home/.vim/bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
@@ -49,9 +46,3 @@
 [submodule "home/.vim/bundle/gitgutter"]
 	path = home/.vim/bundle/gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
-[submodule "home/.vim/bundle/vim-addon-mw-utils"]
-	path = home/.vim/bundle/vim-addon-mw-utils
-	url = git@github.com:MarcWeber/vim-addon-mw-utils.git
-[submodule "home/.vim/bundle/tlib"]
-	path = home/.vim/bundle/tlib
-	url = git@github.com:vim-scripts/tlib.git
