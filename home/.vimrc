@@ -199,6 +199,7 @@ let g:pathogen_disabled = []
 
 " for some reason the jslint plugin is not compatible within the terminal
 if !has('gui_running')
+    call add(g:pathogen_disabled, 'ultisnip')
     call add(g:pathogen_disabled, 'jslint')
 endif
 call pathogen#infect()
