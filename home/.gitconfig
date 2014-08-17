@@ -6,6 +6,7 @@
 	st = status --ignore-submodule
     tree = log --graph --oneline --decorate
     log = log --decorate
+    branch = branch -vv
 [merge]
 	tool = opendiff
 [core]
