@@ -56,6 +56,13 @@ alias jslint="/usr/bin/jslint"
 alias git="/usr/local/bin/git"
 alias evim="vi ~/.vimrc"
 
+alias rtest="bundle exec ruby  -Test"
+alias rails_console="bundle exec ruby script/console"
+alias rails_server="undle exec ruby script/server'"
+alias ggrep="grep -Rni --exclude=tags --exclude-dir=tmp --exclude-dir=coverage --exclude-dir=test --exclude-dir=log --exclude-dir=.git"
+alias gitx="open . -a gitx"
+alias subl="open . -a Sublime\ Text"
+
 # pip zsh completion start
 function _pip_completion {
   local words cword

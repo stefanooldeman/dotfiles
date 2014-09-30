@@ -29,10 +29,10 @@ set nobackup
 
 " Tabs/spaces
 " set textwidth=79  " lines longer than 79 columns will be broken
-set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
+set shiftwidth=2  " operation >> indents 4 columns; << unindents 4 columns
 " display "real world tabs" set tabstop=4     " an hard TAB displays as 4 columns
 set expandtab     " insert spaces when hitting TABs
-set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
+set softtabstop=2 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set shiftround    " round indent to multiple of 'shiftwidth'
 set autoindent    " align the new line indent with the previous line
 
@@ -83,14 +83,22 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 " Show invisibles
 nmap <leader>l :set list!<CR>
 
+" resize horizontal
+nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+" resize vertical
+nnoremap <silent> <Leader>+ :exe "vertical-resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> <Leader>_ :exe "vertical-resize " . (winwidth(0) * 2/3)<CR>
+
 " PHP parser check (CMD-5)
 autocmd FileType php noremap <Leader>5 :!/usr/bin/php -l %<CR>
 autocmd FileType xsd,xml noremap <Leader>5 :!/usr/bin/xmllint %<CR>
 autocmd FileType py noremap <Leader>5 :!/usr/local/bin/pep8 --show-source --show-pep8 %<CR>
 
-if exists("+autochdir") 
-    set autochdir
-endif
+"if exists("+autochdir") 
+"    set autochdir
+"endif
+" can be uncommented when the CTAGS can be used from one location
 
 if has('gui_running')
     autocmd FileType javascript,js noremap <Leader>5 :ToggleJSLint<CR>
@@ -135,7 +143,18 @@ if has("gui_running")
     set guioptions=egmrt
 endif
 
+" Tlist configuration
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Close_On_Select = 0
+let Tlist_Auto_Update = 0
+let Tlist_Process_File_Always = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_WinWidth = 40
+let Tlist_Show_One_File = 1
+let Tlist_Show_Menu = 0
+let Tlist_File_Fold_Auto_Close = 0
+let tlist_css_settings = 'css;e:SECTIONS'
 
 "Autoload
 " To disable a plugin, add it's bundle name to the following list
