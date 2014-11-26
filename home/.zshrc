@@ -1,3 +1,7 @@
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -22,6 +26,7 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -56,9 +61,9 @@ alias jslint="/usr/bin/jslint"
 alias git="/usr/local/bin/git"
 alias evim="vi ~/.vimrc"
 
-alias rtest="bundle exec ruby  -Test"
+alias rtest="bundle exec ruby  -Itest"
 alias rails_console="bundle exec ruby script/console"
-alias rails_server="undle exec ruby script/server'"
+alias rails_server="bundle exec ruby script/server"
 alias ggrep="grep -Rni --exclude=tags --exclude-dir=tmp --exclude-dir=coverage --exclude-dir=test --exclude-dir=log --exclude-dir=.git"
 alias gitx="open . -a gitx"
 alias subl="open . -a Sublime\ Text"

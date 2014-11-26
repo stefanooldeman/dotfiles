@@ -1,23 +1,29 @@
 [user]
-	name = stefanooldeman
-	email = stefano.oldeman@gmail.com
+    name = stefanooldeman
+    email = stefano.oldeman@gmail.com
 [alias]
-	s = status --ignore-submodule
-	st = status --ignore-submodule
+    s = status
+    st = status
     tree = log --graph --oneline --decorate
     log = log --decorate
     branch = branch -vv
+    logline = log --pretty="%h %ad %s"
+
+    co = checkout
+    ci = commit
+    br = branch
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 [merge]
-	tool = opendiff
+    tool = opendiff
 [core]
-	excludesfiles = /Users/stefanooldeman/.gitignore_global
-	excludesfile = /Users/stefano/.gitignore_global
-	quotepath = false
+    excludesfiles = /Users/stefanooldeman/.gitignore_global
+    excludesfile = /Users/stefano/.gitignore_global
+    quotepath = false
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path =
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
     trustExitCode = true
 
 # colour output for diffs
@@ -45,6 +51,6 @@
     whitespace = red reverse
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	editor = vim
-	autocrlf = input
-	pager = less -r
+    editor = vim
+    autocrlf = input
+    pager = less -r
