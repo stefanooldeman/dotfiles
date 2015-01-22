@@ -35,8 +35,10 @@ unsetopt AUTO_CD
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
 # Customize to your needs...
-export DISCO_HOME=$HOME/dev/disco-development-workflow/disco
-export PATH=$DISCO_HOME/bin:$PATH
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home
+export SCALA_HOME=/usr/local/share/scala
+SPARK_HOME=/opt/CDH/spark-1.2.0-bin-hadoop2.4
+export PATH=$DISCO_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$SPARK_HOME/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
@@ -60,6 +62,7 @@ alias zshconfig="vim ~/.zshrc"
 alias jslint="/usr/bin/jslint"
 alias git="/usr/local/bin/git"
 alias evim="vi ~/.vimrc"
+alias vi="vim"
 
 alias rtest="bundle exec ruby  -Itest"
 alias rails_console="bundle exec ruby script/console"

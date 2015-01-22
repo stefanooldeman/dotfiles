@@ -90,7 +90,7 @@ nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <Leader>+ :exe "vertical-resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <Leader>_ :exe "vertical-resize " . (winwidth(0) * 2/3)<CR>
 
-" PHP parser check (CMD-5)
+autocmd FileType make setlocal noexpandtab
 autocmd FileType php noremap <Leader>5 :!/usr/bin/php -l %<CR>
 autocmd FileType xsd,xml noremap <Leader>5 :!/usr/bin/xmllint %<CR>
 autocmd FileType py noremap <Leader>5 :!/usr/local/bin/pep8 --show-source --show-pep8 %<CR>
@@ -124,6 +124,9 @@ func! s:toggle_js_lint()
         let g:JSLintHighlightErrorLine = 1
     endif
 endfunc
+
+" CtrlPBuffer
+let g:ctrlp_cmd = 'CtrlPBuffer'
 
 " Powerline
 set t_Co=256
