@@ -29,12 +29,13 @@ set nobackup
 
 " Tabs/spaces
 " set textwidth=79  " lines longer than 79 columns will be broken
-set shiftwidth=2  " operation >> indents 4 columns; << unindents 4 columns
+set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
 " display "real world tabs" set tabstop=4     " an hard TAB displays as 4 columns
 set expandtab     " insert spaces when hitting TABs
-set softtabstop=2 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
+set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set shiftround    " round indent to multiple of 'shiftwidth'
 set autoindent    " align the new line indent with the previous line
+set tabstop=4
 
 " Visual behaviour
 syntax on
@@ -90,10 +91,12 @@ nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <Leader>+ :exe "vertical-resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <Leader>_ :exe "vertical-resize " . (winwidth(0) * 2/3)<CR>
 
+autocmd FileType ruby,yaml set sw=2 et sts=2 sr ai ts=2
 autocmd FileType make setlocal noexpandtab
 autocmd FileType php noremap <Leader>5 :!/usr/bin/php -l %<CR>
 autocmd FileType xsd,xml noremap <Leader>5 :!/usr/bin/xmllint %<CR>
 autocmd FileType py noremap <Leader>5 :!/usr/local/bin/pep8 --show-source --show-pep8 %<CR>
+autocmd FileType go setlocal ai ts=2 sw=2 noexpandtab
 
 "if exists("+autochdir") 
 "    set autochdir

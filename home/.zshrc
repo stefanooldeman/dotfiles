@@ -41,6 +41,12 @@ SPARK_HOME=/opt/CDH/spark-1.2.0-bin-hadoop2.4
 export PATH=$DISCO_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$SPARK_HOME/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# Go
+export GOPATH=$HOME/dev/gohome
+export GOROOT=/usr/local/go
+export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+# source ./script/activate or set manual when working on projects
+# $GOPATH/bin:
 
 # replacing commands with GNU version
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
@@ -70,6 +76,7 @@ alias rails_server="bundle exec ruby script/server"
 alias ggrep="grep -Rni --exclude=tags --exclude-dir=tmp --exclude-dir=coverage --exclude-dir=test --exclude-dir=log --exclude-dir=.git"
 alias gitx="open . -a gitx"
 alias subl="open . -a Sublime\ Text"
+alias mvim_reopen='git status --short | awk "{ print \$2; }" | xargs mvim'
 
 # pip zsh completion start
 function _pip_completion {

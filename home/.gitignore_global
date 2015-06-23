@@ -24,6 +24,11 @@ tags
 *.zip
 venv
 
+# Editors            #
+######################
+.vimprojects
+
+
 # Logs and databases #
 ######################
 *.log
