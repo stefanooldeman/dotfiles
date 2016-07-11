@@ -8,7 +8,7 @@ set hlsearch
 set incsearch
 " Basic options
 set encoding=utf-8
-set scrolloff=3
+set scrolloff=5
 set showcmd
 set hidden
 set wildmenu
@@ -17,8 +17,10 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-set number
+set nu
+set rnu
 set nowrap
+
 
 " Backups
 set noswapfile
@@ -40,6 +42,7 @@ set tabstop=4
 " Visual behaviour
 syntax on
 colorscheme jellybeans
+
 set listchars=tab:▸\ ,eol:¬ " Use the same symbols as TextMate for tabstops and EOLs
 
 " Set font according to system
@@ -57,8 +60,35 @@ endif
 highlight clear SpellBad
 highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
 
+
+command! -nargs=* -bar Wrap call s:wrap_linebreak()
+func! s:wrap_linebreak()
+    set wrap
+    set linebreak
+    set nolist
+    set showbreak=>\ \ 
+endfunc
+func! s:all_latex()
+    color habiLight
+    set list
+    set scrolloff=5
+    set scroll=5
+    set nostartofline
+    set cursorline
+endfunc
+" For using with latex or text
+autocmd BufRead *.tex call s:all_latex()
+autocmd BufRead *.tex call s:wrap_linebreak()
+autocmd BufWritePre *.tex :%s/\s\+$//e
+
 " 'sudo' save:
 cmap w!! %!sudo tee > /dev/null %
+
+" Folding
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
 
 " Easy window navigation
 map <C-h> <C-w>h
@@ -97,6 +127,9 @@ autocmd FileType php noremap <Leader>5 :!/usr/bin/php -l %<CR>
 autocmd FileType xsd,xml noremap <Leader>5 :!/usr/bin/xmllint %<CR>
 autocmd FileType py noremap <Leader>5 :!/usr/local/bin/pep8 --show-source --show-pep8 %<CR>
 autocmd FileType go setlocal ai ts=2 sw=2 noexpandtab
+" Go vim-go mappings (https://github.com/fatih/vim-go)
+autocmd FileType go nmap <leader>5 <Plug>(go-build)
+autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
 
 "if exists("+autochdir") 
 "    set autochdir
@@ -113,7 +146,8 @@ autocmd FileType make set noexpandtab
 autocmd BufNewFile,BufRead *.less set filetype=less
 autocmd BufNewFile,BufRead *.ngx set filetype=nginx
 " vimcasts #24 - Auto-reload vimrc on save
-autocmd bufwritepost .vimrc source $MYVIMRC
+" autocmd bufwritepost .vimrc source $MYVIMRC
+
  
 " JSlint plugin configuration
 let JSLintHighlightErrorLine=0
@@ -175,3 +209,26 @@ endif
 call add(g:pathogen_disabled, 'minibuffexplorer')
 call pathogen#infect()
 call pathogen#helptags()
+
+" Vim Smooth Scroll
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll, 140, 1)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll, 140, 1)<CR>
+
+" Ag find under cursor
+noremap <leader>a :Ag! -Q <C-r>=expand('<cword>')<CR><CR>
+
+" Go colors!!
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+" Autom import missing Go paths
+let g:go_fmt_command = "goimports"
+
+" Dash mapping
+:nmap <silent> <leader>d <Plug>DashSearch
+
+set tags=.tags,tags;
+

@@ -37,7 +37,7 @@ unsetopt AUTO_CD
 # Customize to your needs...
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home
 export SCALA_HOME=/usr/local/share/scala
-SPARK_HOME=/opt/CDH/spark-1.2.0-bin-hadoop2.4
+SPARK_HOME=/opt/spark-1.6.0
 export PATH=$DISCO_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$SPARK_HOME/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -55,7 +55,9 @@ MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
-export PYTHONPATH=.:$PYTHONPATH
+export PYTHONPATH=$SPARK_HOME/python/:$PYTHONPATH
+export PYTHONPATH=.:$SPARK_HOME/python/lib/py4j-0.9-src.zip:$PYTHONPATH
+# export PYTHONPATH=.:$PYTHONPATH
 plugins=(brew osx pip virtualenv)
 
 export PYENV_VERSION=2.7
@@ -77,6 +79,13 @@ alias ggrep="grep -Rni --exclude=tags --exclude-dir=tmp --exclude-dir=coverage -
 alias gitx="open . -a gitx"
 alias subl="open . -a Sublime\ Text"
 alias mvim_reopen='git status --short | awk "{ print \$2; }" | xargs mvim'
+alias bx='bundle exec'
+alias prydoc='grep Pry -A 7 /Users/stefano/dev/S2M/test/test_helper.rb | pbcopy'
+alias rubodiff='git diff --name-only HEAD master | grep ".rb" | xargs rubocop'
+alias gg='gom exec ginkgo -skipPackage vendor --randomizeAllSpecs --randomizeSuites'
+
+alias adcurve='cd ~/dev/adcurve'
+alias s2m='cd ~/dev/s2m'
 
 # pip zsh completion start
 function _pip_completion {

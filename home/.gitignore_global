@@ -27,6 +27,7 @@ venv
 # Editors            #
 ######################
 .vimprojects
+.tags
 
 
 # Logs and databases #
@@ -38,3 +39,4 @@ venv
 .DS_Store
 ehthumbs.db
 Thumbs.db
+.rvmrc

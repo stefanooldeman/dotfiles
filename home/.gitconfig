@@ -7,12 +7,20 @@
     tree = log --graph --oneline --decorate
     log = log --decorate
     branch = branch -vv
-    logline = log --pretty="%h %ad %s"
+    logline = log --pretty='%h %ad %s'
+    releases = log --pretty='%h | %ci | %f | %aN' --grep 'Merge pull request'
 
     co = checkout
     ci = commit
     br = branch
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+# Gerrit / Codereview  https://golang.org/doc/contribute.html
+    change = codereview change
+    gofmt = codereview gofmt
+    mail = codereview mail
+    pending = codereview pending
+    submit = codereview submit
+    sync = codereview sync
 [merge]
     tool = opendiff
 [core]

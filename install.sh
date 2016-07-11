@@ -49,8 +49,11 @@ plugins[18]="https://github.com/vim-scripts/closetag.vim.git"
 plugins[19]="https://github.com/derekwyatt/vim-scala.git"
 plugins[20]="git@github.com:vim-scripts/project.tar.gz.git"
 plugins[21]="https://github.com/fatih/vim-go.git"
-# new
 plugins[22]="git@github.com:rking/ag.vim.git"
+plugins[23]="git@github.com:terryma/vim-smooth-scroll.git"
+# new
+plugins[24]="https://github.com/terryma/vim-multiple-cursors.git"
+plugins[25]="https://github.com/rizzatti/dash.vim.git"
 
 declare COMMAND_T=${plugins[10]}
 
