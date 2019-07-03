@@ -236,3 +236,7 @@ set tags=.tags,tags;
 " AutoSave
 " https://github.com/vim-scripts/vim-auto-save
 let g:auto_save = 1  " enable AutoSave on Vim startup
+
+" Indent Guides
+" https://github.com/nathanaelkane/vim-indent-guides
+let g:indent_guides_enable_on_vim_startup = 1
