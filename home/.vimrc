@@ -31,13 +31,13 @@ set nobackup
 
 " Tabs/spaces
 " set textwidth=79  " lines longer than 79 columns will be broken
-set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
+set shiftwidth=1  " operation >> indents 4 columns; << unindents 4 columns
 " display "real world tabs" set tabstop=4     " an hard TAB displays as 4 columns
 set expandtab     " insert spaces when hitting TABs
-set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
+set softtabstop=2 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set shiftround    " round indent to multiple of 'shiftwidth'
 set autoindent    " align the new line indent with the previous line
-set tabstop=4
+set tabstop=1
 
 " Visual behaviour
 syntax on
@@ -111,6 +111,7 @@ noremap <leader>4 <Plug>TaskList
 noremap <Leader>7 <ESC>:Tlist<CR>
 " Hide ^M characters which occur at the end of a line
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+
 " Show invisibles
 nmap <leader>l :set list!<CR>
 
@@ -146,7 +147,7 @@ autocmd FileType make set noexpandtab
 autocmd BufNewFile,BufRead *.less set filetype=less
 autocmd BufNewFile,BufRead *.ngx set filetype=nginx
 " vimcasts #24 - Auto-reload vimrc on save
-" autocmd bufwritepost .vimrc source $MYVIMRC
+autocmd bufwritepost .vimrc source $MYVIMRC
 
  
 " JSlint plugin configuration
@@ -232,3 +233,6 @@ let g:go_fmt_command = "goimports"
 
 set tags=.tags,tags;
 
+" AutoSave
+" https://github.com/vim-scripts/vim-auto-save
+let g:auto_save = 1  " enable AutoSave on Vim startup
