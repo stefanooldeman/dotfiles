@@ -28,7 +28,7 @@ EOU
 }
 
 declare -a plugins
-plugins[0]="https://github.com/scrooloose/nerdtree.git"
+# plugins[0]="https://github.com/scrooloose/nerdtree.git"
 plugins[1]="https://github.com/vim-scripts/taglist.vim.git"
 plugins[2]="https://github.com/sjl/gundo.vim.git"
 plugins[3]="https://github.com/tpope/vim-fugitive.git"

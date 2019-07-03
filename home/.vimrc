@@ -105,7 +105,7 @@ vnoremap s "_s
 " replace currently selected text with default register without yanking it
 vnoremap p "_dP
 
-noremap <Leader>1 :NERDTreeToggle<CR>
+" noremap <Leader>1 :NERDTreeToggle<CR>
 noremap <Leader>3 :GundoToggle<CR>
 noremap <leader>4 <Plug>TaskList
 noremap <Leader>7 <ESC>:Tlist<CR>
