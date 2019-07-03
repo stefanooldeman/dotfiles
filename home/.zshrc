@@ -1,6 +1,8 @@
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export EDITOR=vi
+
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -27,6 +29,9 @@ ZSH_THEME="robbyrussell"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+plugins=(pip docker kubectl osx rvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -34,13 +39,20 @@ unsetopt AUTO_CD
 
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
-# Customize to your needs...
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home
-export SCALA_HOME=/usr/local/share/scala
+# eval "$(jenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+
+# INCLUDE SOME BINs manually on PATH
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+export SCALA_HOME=/usr/local/Cellar/scala/2.12.1
 SPARK_HOME=/opt/spark-1.6.0
-export PATH=$DISCO_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$SPARK_HOME/bin:$PATH
+MAVEN_HOME=/opt/apache-maven-3.3.9
+export PATH=$MAVEN_HOME/bin:$SCALA_HOME/bin:$SPARK_HOME/bin:$PATH
+export PATH=$HOME/.pyenv/versions/3.6.8/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$HOME/bin:$HOME/dev/rae-dev-toolbox:$PATH # self scripted shit
+
 # Go
 export GOPATH=$HOME/dev/gohome
 export GOROOT=/usr/local/go
@@ -52,15 +64,16 @@ export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
-export PYTHONPATH=$SPARK_HOME/python/:$PYTHONPATH
-export PYTHONPATH=.:$SPARK_HOME/python/lib/py4j-0.9-src.zip:$PYTHONPATH
-# export PYTHONPATH=.:$PYTHONPATH
-plugins=(brew osx pip virtualenv)
+# Add extra trivial scripts in ~/bin
+export PATH=$HOME/bin/jenv/bin:$PATH
+export CDPATH=.:~/dev/
 
-export PYENV_VERSION=2.7
+[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+
+alias "python3.5"="python3"
+export PATH=$HOME/bin/rae-dev-toolbox:$PATH
+
+# export PYENV_VERSION=2.7
 alias mongostart="mongod run --config /usr/local/Cellar/mongodb/2.0.0-x86_64/mongod.conf"
 alias ping="ping -c 7"
 alias gitx="open . -a gitx"
@@ -83,19 +96,17 @@ alias bx='bundle exec'
 alias prydoc='grep Pry -A 7 /Users/stefano/dev/S2M/test/test_helper.rb | pbcopy'
 alias rubodiff='git diff --name-only HEAD master | grep ".rb" | xargs rubocop'
 alias gg='gom exec ginkgo -skipPackage vendor --randomizeAllSpecs --randomizeSuites'
+alias mux='tmuxinator'
+alias avro='java -jar ~/bin/avro-tools.1.7.7.jar'
+alias k="kubectl"
+alias ks="kubectl --namespace kube-system"
 
-alias adcurve='cd ~/dev/adcurve'
-alias s2m='cd ~/dev/s2m'
-
-# pip zsh completion start
-function _pip_completion {
-  local words cword
-  read -Ac words
-  read -cn cword
-  reply=( $( COMP_WORDS="$words[*]" \
-             COMP_CWORD=$(( cword-1 )) \
-             PIP_AUTO_COMPLETE=1 $words[1] ) )
-}
-compctl -K _pip_completion pip
+# compctl -K _pip_completion pip
 # pip zsh completion end
 ulimit -n 4096
+
+export TILLER_NAMESPACE=$(k8-get-current-namespace)
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+
+# source /Users/stefano/bin/google-cloud-sdk/completion.zsh.inc
+# source /Users/stefano/bin/google-cloud-sdk/path.zsh.inc

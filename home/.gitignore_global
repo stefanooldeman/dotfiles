@@ -18,9 +18,7 @@ tags
 *.dmg
 *.gz
 *.iso
-*.jar
 *.rar
-*.tar
 *.zip
 venv
 
@@ -28,6 +26,8 @@ venv
 ######################
 .vimprojects
 .tags
+.idea
+*.iml
 
 
 # Logs and databases #

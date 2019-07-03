@@ -9,6 +9,7 @@
     branch = branch -vv
     logline = log --pretty='%h %ad %s'
     releases = log --pretty='%h | %ci | %f | %aN' --grep 'Merge pull request'
+    adog = log --all --decorate --oneline --graph
 
     co = checkout
     ci = commit
@@ -22,17 +23,7 @@
     submit = codereview submit
     sync = codereview sync
 [merge]
-    tool = opendiff
-[core]
-    excludesfiles = /Users/stefanooldeman/.gitignore_global
-    excludesfile = /Users/stefano/.gitignore_global
-    quotepath = false
-[difftool "sourcetree"]
-    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    path =
-[mergetool "sourcetree"]
-    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-    trustExitCode = true
+    tool = ksdiff
 
 # colour output for diffs
 [color]
@@ -52,7 +43,6 @@
     untracked = cyan
 
 #Highlight whitespace in diffs
-
 [color]
     ui = true
 [color "diff"]
@@ -62,3 +52,6 @@
     editor = vim
     autocrlf = input
     pager = less -r
+	excludesfile = /Users/stefano/.gitignore_global
+[diff "sopsdiffer"]
+	textconv = sops -d
