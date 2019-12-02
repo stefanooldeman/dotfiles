@@ -2,6 +2,9 @@ filetype on                          " set filetype stuff to on
 filetype plugin on
 filetype indent on
 
+" set rubydll=/usr/local/opt/ruby/lib/libruby.2.6.dylib
+" set luadll=/usr/local/opt/lua/lib/liblua.5.3.5.dylib
+
 set nocompatible
 " Search
 set hlsearch
@@ -38,6 +41,9 @@ set softtabstop=2 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set shiftround    " round indent to multiple of 'shiftwidth'
 set autoindent    " align the new line indent with the previous line
 set tabstop=1
+
+" Do not fix line ending on end of file
+set nofixendofline
 
 " Visual behaviour
 syntax on
@@ -105,7 +111,7 @@ vnoremap s "_s
 " replace currently selected text with default register without yanking it
 vnoremap p "_dP
 
-" noremap <Leader>1 :NERDTreeToggle<CR>
+noremap <Leader>1 :NERDTreeToggle<CR>
 noremap <Leader>3 :GundoToggle<CR>
 noremap <leader>4 <Plug>TaskList
 noremap <Leader>7 <ESC>:Tlist<CR>
@@ -177,6 +183,7 @@ endif
 " NERDtree configuration
 let NERDTreeWinSize=30
 let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeShowHidden=1
 " let NERDTreeSortOrder=[]
 
 " No more toolbar
@@ -240,3 +247,4 @@ let g:auto_save = 1  " enable AutoSave on Vim startup
 " Indent Guides
 " https://github.com/nathanaelkane/vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
+

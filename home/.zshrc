@@ -31,7 +31,7 @@ ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(pip docker kubectl osx rvm)
+plugins=(pip docker kubectl osx rvm vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -39,7 +39,6 @@ unsetopt AUTO_CD
 
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
-# eval "$(jenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 
 # INCLUDE SOME BINs manually on PATH
@@ -51,7 +50,7 @@ export PATH=$MAVEN_HOME/bin:$SCALA_HOME/bin:$SPARK_HOME/bin:$PATH
 export PATH=$HOME/.pyenv/versions/3.6.8/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PATH=$HOME/bin:$HOME/dev/rae-dev-toolbox:$PATH # self scripted shit
+export PATH=$HOME/bin:$PATH # self scripted shit
 
 # Go
 export GOPATH=$HOME/dev/gohome
@@ -65,25 +64,24 @@ export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Add extra trivial scripts in ~/bin
-export PATH=$HOME/bin/jenv/bin:$PATH
+export PATH=$HOME/.jenv/bin:$PATH
 export CDPATH=.:~/dev/
 
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
 
+# eval "$(pyenv init -)"
 alias "python3.5"="python3"
-export PATH=$HOME/bin/rae-dev-toolbox:$PATH
+export PATH=$HOME/dev/m2/m2-tools:$PATH
 
 # export PYENV_VERSION=2.7
 alias mongostart="mongod run --config /usr/local/Cellar/mongodb/2.0.0-x86_64/mongod.conf"
 alias ping="ping -c 7"
 alias gitx="open . -a gitx"
 alias untar="tar -zxvf"
-alias vim="mvim -v"
 alias zshconfig="vim ~/.zshrc"
 alias jslint="/usr/bin/jslint"
 alias git="/usr/local/bin/git"
 alias evim="vi ~/.vimrc"
-alias vi="vim"
 
 alias rtest="bundle exec ruby  -Itest"
 alias rails_console="bundle exec ruby script/console"
@@ -100,13 +98,18 @@ alias mux='tmuxinator'
 alias avro='java -jar ~/bin/avro-tools.1.7.7.jar'
 alias k="kubectl"
 alias ks="kubectl --namespace kube-system"
+alias kctx="kubectx"
+alias kns="kubens"
+
+source $HOME/.bash_alias
 
 # compctl -K _pip_completion pip
 # pip zsh completion end
 ulimit -n 4096
 
-export TILLER_NAMESPACE=$(k8-get-current-namespace)
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 
-# source /Users/stefano/bin/google-cloud-sdk/completion.zsh.inc
-# source /Users/stefano/bin/google-cloud-sdk/path.zsh.inc
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+
+eval "$(jenv init -)"

@@ -28,7 +28,7 @@ EOU
 }
 
 declare -a plugins
-# plugins[0]="https://github.com/scrooloose/nerdtree.git"
+plugins[0]="https://github.com/scrooloose/nerdtree.git"
 plugins[1]="https://github.com/vim-scripts/taglist.vim.git"
 plugins[2]="https://github.com/sjl/gundo.vim.git"
 plugins[3]="https://github.com/tpope/vim-fugitive.git"
@@ -42,13 +42,14 @@ plugins[10]=$COMMAND_T
 plugins[11]="https://github.com/hallettj/jslint.vim.git"
 plugins[12]="https://github.com/rodjek/vim-puppet.git"
 plugins[13]="https://github.com/godlygeek/tabular.git"
-plugins[14]="https://github.com/evanmiller/nginx-vim-syntax.git"
+# plugins[14]="https://github.com/evanmiller/nginx-vim-syntax.git"
 plugins[16]="https://github.com/mitsuhiko/vim-jinja.git"
 plugins[18]="https://github.com/vim-scripts/closetag.vim.git"
 plugins[19]="https://github.com/derekwyatt/vim-scala.git"
 plugins[21]="https://github.com/fatih/vim-go.git"
-plugins[22]="git@github.com:rking/ag.vim.git"
+plugins[22]="https://github.com/rking/ag.vim.git"
 plugins[23]="https://github.com/vim-scripts/vim-auto-save.git"
+plugins[24]="https://github.com/gurpreetatwal/vim-avro.git"
 
 
 

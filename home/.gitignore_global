@@ -40,3 +40,7 @@ venv
 ehthumbs.db
 Thumbs.db
 .rvmrc
+
+venv
+tags
+builds/

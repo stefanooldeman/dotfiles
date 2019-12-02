@@ -1,5 +1,5 @@
 [user]
-    name = stefanooldeman
+    name = Stefano Oldeman
     email = stefano.oldeman@gmail.com
 [alias]
     s = status
@@ -52,6 +52,6 @@
     editor = vim
     autocrlf = input
     pager = less -r
-	excludesfile = /Users/stefano/.gitignore_global
+    excludesfile = /Users/stefano/.gitignore_global
 [diff "sopsdiffer"]
 	textconv = sops -d
