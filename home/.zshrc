@@ -37,9 +37,9 @@ source $ZSH/oh-my-zsh.sh
 KUBE_PS1_COLOR_SYMBOL="%F{33}"
 KUBE_PS1_PREFIX=''
 KUBE_PS1_SUFFIX=''
-KUBE_PS1_DIVIDER=" %F{33}ns: "
+KUBE_PS1_DIVIDER=" %F{8}ns: "
 KUBE_PS1_COLOR_CONTEXT="%{$fg_bold[red]%}"
-KUBE_PS1_COLOR_NS="%F{8}"
+KUBE_PS1_COLOR_NS="%B%F{33}"
 RPROMPT='$(kube_ps1)  '
 
 unsetopt AUTO_CD
