@@ -3,7 +3,6 @@ export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR=vi
 
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -31,9 +30,17 @@ ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(pip docker kubectl osx rvm vi-mode)
+plugins=(pip docker osx rvm vi-mode kube-ps1)
 
 source $ZSH/oh-my-zsh.sh
+
+KUBE_PS1_COLOR_SYMBOL="%F{33}"
+KUBE_PS1_PREFIX=''
+KUBE_PS1_SUFFIX=''
+KUBE_PS1_DIVIDER=" %F{33}ns: "
+KUBE_PS1_COLOR_CONTEXT="%{$fg_bold[red]%}"
+KUBE_PS1_COLOR_NS="%F{8}"
+RPROMPT='$(kube_ps1)  '
 
 unsetopt AUTO_CD
 

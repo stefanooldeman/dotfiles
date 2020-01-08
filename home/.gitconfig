@@ -52,6 +52,6 @@
     editor = vim
     autocrlf = input
     pager = less -r
-    excludesfile = /Users/stefano/.gitignore_global
+    excludesfile = ~/.gitignore_global
 [diff "sopsdiffer"]
 	textconv = sops -d
