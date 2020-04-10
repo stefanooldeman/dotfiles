@@ -10,6 +10,7 @@
     logline = log --pretty='%h %ad %s'
     releases = log --pretty='%h | %ci | %f | %aN' --grep 'Merge pull request'
     adog = log --all --decorate --oneline --graph
+    f = fetch --prune --all
 
     co = checkout
     ci = commit

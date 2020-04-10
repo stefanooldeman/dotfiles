@@ -34,12 +34,13 @@ plugins=(pip docker osx rvm vi-mode kube-ps1)
 
 source $ZSH/oh-my-zsh.sh
 
-KUBE_PS1_COLOR_SYMBOL="%F{33}"
+KUBE_PS1_COLOR_SYMBOL="%F{31}"
 KUBE_PS1_PREFIX=''
 KUBE_PS1_SUFFIX=''
+KUBE_PS1_SEPARATOR=''
 KUBE_PS1_DIVIDER=" %F{8}ns: "
 KUBE_PS1_COLOR_CONTEXT="%{$fg_bold[red]%}"
-KUBE_PS1_COLOR_NS="%B%F{33}"
+KUBE_PS1_COLOR_NS="%B%F{31}"
 RPROMPT='$(kube_ps1)  '
 
 unsetopt AUTO_CD
@@ -58,13 +59,10 @@ export PATH=$HOME/.pyenv/versions/3.6.8/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$HOME/bin:$PATH # self scripted shit
+export PATH=$HOME/flutter/bin:$PATH
 
-# Go
-export GOPATH=$HOME/dev/gohome
-export GOROOT=/usr/local/go
-export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
-# source ./script/activate or set manual when working on projects
-# $GOPATH/bin:
+# Go > 1.11 modules default install location
+export PATH=$HOME/go/bin:$PATH
 
 # replacing commands with GNU version
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
@@ -72,12 +70,13 @@ MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Add extra trivial scripts in ~/bin
 export PATH=$HOME/.jenv/bin:$PATH
-export CDPATH=.:~/dev/
+export CDPATH=.:~/dev/m2
 
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
 
 # eval "$(pyenv init -)"
 alias "python3.5"="python3"
+export PATH=$HOME/bin/kafka_2.11-1.1.1/bin:$PATH
 export PATH=$HOME/dev/m2/m2-tools:$PATH
 
 # export PYENV_VERSION=2.7

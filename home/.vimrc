@@ -231,6 +231,7 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_gocode_propose_source = 1
 
 " Autom import missing Go paths
 let g:go_fmt_command = "goimports"
@@ -242,7 +243,7 @@ set tags=.tags,tags;
 
 " AutoSave
 " https://github.com/vim-scripts/vim-auto-save
-let g:auto_save = 1  " enable AutoSave on Vim startup
+" let g:auto_save = 1  " enable AutoSave on Vim startup
 
 " Indent Guides
 " https://github.com/nathanaelkane/vim-indent-guides
