@@ -23,6 +23,7 @@ set laststatus=2
 set nu
 set rnu
 set nowrap
+set tags=.tags,tags;
 
 
 " Backups
@@ -92,6 +93,7 @@ cmap w!! %!sudo tee > /dev/null %
 
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
 
 " Folding
 set foldmethod=indent   "fold based on indent
@@ -162,57 +164,9 @@ autocmd BufNewFile,BufRead *.ngx set filetype=nginx
 " vimcasts #24 - Auto-reload vimrc on save
 autocmd bufwritepost .vimrc source $MYVIMRC
 
- 
-" JSlint plugin configuration
-let JSLintHighlightErrorLine=0
-
-command! -n=0 -bar ToggleJSLint call s:toggle_js_lint()
-func! s:toggle_js_lint()
-    " toglle the visuals
-    if g:JSLintHighlightErrorLine == 1
-        let g:JSLintHighlightErrorLine = 0
-    else
-        let g:JSLintHighlightErrorLine = 1
-    endif
-endfunc
-
-" CtrlPBuffer
-let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_working_path_mode = 'ca'
-
-" Powerline
-set t_Co=256
-set laststatus=2
-let g:Powerline_symbols='unicode' " 'fancy' will also work and makes better use of patched fonts
-if has('gui_running')
-    set transparency=1        " set transparent window
-endif
-
-" NERDtree configuration
-let NERDTreeWinSize=30
-let NERDTreeIgnore = ['\.pyc$']
-let NERDTreeShowHidden=1
-" let NERDTreeSortOrder=[]
-autocmd BufWinEnter * silent NERDTreeMirror
 
 
-" No more toolbar
-if has("gui_running")
-    set guioptions=egmrt
-endif
-
-" Tlist configuration
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_Close_On_Select = 0
-let Tlist_Auto_Update = 0
-let Tlist_Process_File_Always = 1
-let Tlist_Use_Right_Window = 1
-let Tlist_WinWidth = 40
-let Tlist_Show_One_File = 1
-let Tlist_Show_Menu = 0
-let Tlist_File_Fold_Auto_Close = 0
-let tlist_css_settings = 'css;e:SECTIONS'
+" ################ START CONFIGURING PLUGINS #################################
 
 "Autoload
 " To disable a plugin, add it's bundle name to the following list
@@ -227,13 +181,82 @@ endif
 call add(g:pathogen_disabled, 'minibuffexplorer')
 call pathogen#infect()
 call pathogen#helptags()
+ 
+
+
+" JSlint plugin configuration
+let JSLintHighlightErrorLine=0
+command! -n=0 -bar ToggleJSLint call s:toggle_js_lint()
+func! s:toggle_js_lint()
+    " toglle the visuals
+    if g:JSLintHighlightErrorLine == 1
+        let g:JSLintHighlightErrorLine = 0
+    else
+        let g:JSLintHighlightErrorLine = 1
+    endif
+endfunc
+
+
+
+" CtrlPBuffer
+let g:ctrlp_cmd = 'CtrlPBuffer'
+let g:ctrlp_working_path_mode = 'ca'
+let g:ctrlp_root_markers = ['README.md', 'pom.xml', 'venv', 'tox.ini']
+
+
+
+" Powerline
+set t_Co=256
+set laststatus=2
+let g:Powerline_symbols='unicode' " 'fancy' will also work and makes better use of patched fonts
+if has('gui_running')
+    set transparency=1        " set transparent window
+endif
+
+
+" NERDtree configuration
+let NERDTreeWinSize=30
+let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeShowHidden=1
+" let NERDTreeSortOrder=[]
+autocmd BufWinEnter * silent NERDTreeMirror
+autocmd BufWinEnter * silent NERDTreeMirror
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+
+" No more toolbar
+if has("gui_running")
+    set guioptions=egmrt
+endif
+
+
+" Tlist configuration
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Close_On_Select = 0
+let Tlist_Auto_Update = 0
+let Tlist_Process_File_Always = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_WinWidth = 40
+let Tlist_Show_One_File = 1
+let Tlist_Show_Menu = 0
+let Tlist_File_Fold_Auto_Close = 0
+let tlist_css_settings = 'css;e:SECTIONS'
+
 
 " Vim Smooth Scroll
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll, 140, 1)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll, 140, 1)<CR>
 
-" Ag find under cursor
+
+" Ag/Ack find under cursor
 noremap <leader>a :Ag! -Q <C-r>=expand('<cword>')<CR><CR>
+" if executable('ag')
+"  let g:ackprg = 'ag --vimgrep'
+" endif
+
 
 " Go colors!!
 let g:go_highlight_functions = 1
@@ -242,20 +265,14 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_gocode_propose_source = 1
-
 " Autom import missing Go paths
 let g:go_fmt_command = "goimports"
+
 
 " Dash mapping
 :nmap <silent> <leader>d <Plug>DashSearch
 
-set tags=.tags,tags;
-
-" AutoSave
-" https://github.com/vim-scripts/vim-auto-save
-" let g:auto_save = 1  " enable AutoSave on Vim startup
 
 " Indent Guides
 " https://github.com/nathanaelkane/vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
-
