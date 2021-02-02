@@ -90,6 +90,9 @@ autocmd BufWritePre *.tex :%s/\s\+$//e
 " 'sudo' save:
 cmap w!! %!sudo tee > /dev/null %
 
+let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+
 " Folding
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
@@ -101,6 +104,10 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Split defaults side of current pane
+set splitbelow
+set splitright
 
 " delete without saving to register
 nnoremap d "_d
@@ -170,7 +177,8 @@ func! s:toggle_js_lint()
 endfunc
 
 " CtrlPBuffer
-let g:ctrlp_cmd = 'CtrlPBuffer'
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_working_path_mode = 'ca'
 
 " Powerline
 set t_Co=256
@@ -185,6 +193,8 @@ let NERDTreeWinSize=30
 let NERDTreeIgnore = ['\.pyc$']
 let NERDTreeShowHidden=1
 " let NERDTreeSortOrder=[]
+autocmd BufWinEnter * silent NERDTreeMirror
+
 
 " No more toolbar
 if has("gui_running")

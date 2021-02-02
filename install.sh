@@ -33,7 +33,7 @@ plugins[1]="https://github.com/vim-scripts/taglist.vim.git"
 plugins[2]="https://github.com/sjl/gundo.vim.git"
 plugins[3]="https://github.com/tpope/vim-fugitive.git"
 plugins[4]="https://github.com/shumphrey/fugitive-gitlab.vim.git"
-plugins[5]="https://github.com/kien/ctrlp.vim.git"
+plugins[5]="https://github.com/ctrlpvim/ctrlp.vim"
 plugins[6]="https://github.com/nanotech/jellybeans.vim.git"
 plugins[7]="https://github.com/Lokaltog/vim-powerline.git"
 plugins[8]="https://github.com/tpope/vim-liquid.git"
@@ -51,6 +51,7 @@ plugins[21]="https://github.com/fatih/vim-go.git"
 plugins[22]="https://github.com/rking/ag.vim.git"
 plugins[23]="https://github.com/vim-scripts/vim-auto-save.git"
 plugins[24]="https://github.com/gurpreetatwal/vim-avro.git"
+plugins[25]="https://github.com/benmills/vimux.git"
 
 
 

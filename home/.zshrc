@@ -96,6 +96,7 @@ alias ggrep="grep -Rni --exclude=tags --exclude-dir=tmp --exclude-dir=coverage -
 alias gitx="open . -a gitx"
 alias subl="open . -a Sublime\ Text"
 alias mvim_reopen='git status --short | awk "{ print \$2; }" | xargs mvim'
+alias e='mvim --remote-silent'
 alias bx='bundle exec'
 alias prydoc='grep Pry -A 7 /Users/stefano/dev/S2M/test/test_helper.rb | pbcopy'
 alias rubodiff='git diff --name-only HEAD master | grep ".rb" | xargs rubocop'
@@ -119,3 +120,5 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.in
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 eval "$(jenv init -)"
+# jenv enable-plugin maven
+# jenv enable-plugin export
