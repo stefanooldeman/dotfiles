@@ -120,7 +120,9 @@ vnoremap s "_s
 " replace currently selected text with default register without yanking it
 vnoremap p "_dP
 
-noremap <Leader>1 :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
+" Mirror the NERDTree before showing it. This makes it the same on all tabs.
+noremap <Leader>1 :NERDTreeMirror<CR>:NERDTreeFocus<CR>
 noremap <Leader>3 :GundoToggle<CR>
 noremap <leader>4 <Plug>TaskList
 noremap <Leader>7 <ESC>:Tlist<CR>
@@ -219,8 +221,12 @@ let NERDTreeWinSize=30
 let NERDTreeIgnore = ['\.pyc$']
 let NERDTreeShowHidden=1
 " let NERDTreeSortOrder=[]
-autocmd BufWinEnter * silent NERDTreeMirror
-autocmd BufWinEnter * silent NERDTreeMirror
+" always keep quickfix at the bottom
+augroup DragQuickfixWindowDown
+    autocmd!
+    autocmd FileType qf wincmd J
+augroup end
+
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
@@ -252,10 +258,12 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll, 140, 1)<CR>
 
 
 " Ag/Ack find under cursor
-noremap <leader>a :Ag! -Q <C-r>=expand('<cword>')<CR><CR>
-" if executable('ag')
-"  let g:ackprg = 'ag --vimgrep'
-" endif
+" noremap <leader>a :Ag! -Q <C-r>=expand('<cword>')<CR><CR>
+noremap <leader>a :Ack! -Q <C-r>=expand('<cword>')<CR><CR>
+" using Ack.vim with the_silver_searcher (Ag)
+if executable('ag')
+ let g:ackprg = 'ag --vimgrep'
+endif
 
 
 " Go colors!!
