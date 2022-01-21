@@ -1,4 +1,4 @@
 gnureadline==6.3.3
-ipython==2.1.0
+ipython==7.16.3
 virtualenv==1.11.6
 wsgiref==0.1.2
