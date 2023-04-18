@@ -91,10 +91,6 @@ autocmd BufWritePre *.tex :%s/\s\+$//e
 " 'sudo' save:
 cmap w!! %!sudo tee > /dev/null %
 
-let g:auto_save = 1  " enable AutoSave on Vim startup
-let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
-let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
-
 " Folding
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
@@ -128,7 +124,8 @@ noremap <leader>4 <Plug>TaskList
 noremap <Leader>7 <ESC>:Tlist<CR>
 " Hide ^M characters which occur at the end of a line
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
+noremap <Leader>g <ESC>:GundoToggle<CR>
+noremap <Leader>t :CtrlPCurFile<CR>
 " Show invisibles
 nmap <leader>l :set list!<CR>
 
@@ -154,10 +151,6 @@ autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
 "endif
 " can be uncommented when the CTAGS can be used from one location
 
-if has('gui_running')
-    autocmd FileType javascript,js noremap <Leader>5 :ToggleJSLint<CR>
-endif
-
 autocmd FileType make set noexpandtab
 
 "autocmd BufWritePre * :%s/\s\+$//e  "escaping whitespace on save.
@@ -168,7 +161,7 @@ autocmd bufwritepost .vimrc source $MYVIMRC
 
 
 
-" ################ START CONFIGURING PLUGINS #################################
+" ################ PATHOGEN PLUGIN LOADER #################################
 
 "Autoload
 " To disable a plugin, add it's bundle name to the following list
@@ -184,6 +177,13 @@ call add(g:pathogen_disabled, 'minibuffexplorer')
 call pathogen#infect()
 call pathogen#helptags()
  
+
+" ################ START CONFIGURING PLUGINS #################################
+
+" AutoSave
+let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+" let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
 
 
 " JSlint plugin configuration
@@ -203,7 +203,7 @@ endfunc
 " CtrlPBuffer
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_working_path_mode = 'ca'
-let g:ctrlp_root_markers = ['README.md', 'pom.xml', 'venv', 'tox.ini']
+let g:ctrlp_root_markers = ['README.md', 'pom.xml', 'venv', 'tox.ini', 'Gemfile']
 
 
 
@@ -284,3 +284,7 @@ let g:go_fmt_command = "goimports"
 " Indent Guides
 " https://github.com/nathanaelkane/vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
+
+
+" Tagalong
+let g:tagalong_additional_filetypes = ['erb']

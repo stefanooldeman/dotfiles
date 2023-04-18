@@ -1,2 +1,3 @@
 *.netrwhist
 home/.vim/bundle/*/
+home/.vim/backup/

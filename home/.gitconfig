@@ -1,6 +1,6 @@
 [user]
     name = Stefano Oldeman
-    email = stefano.oldeman@gmail.com
+	email = soldeman@bol.com
 [alias]
     s = status
     st = status
@@ -11,6 +11,7 @@
     releases = log --pretty='%h | %ci | %f | %aN' --grep 'Merge pull request'
     adog = log --all --decorate --oneline --graph
     f = fetch --prune --all
+    fp = push --force-with-lease
 
     co = checkout
     ci = commit
@@ -23,8 +24,16 @@
     pending = codereview pending
     submit = codereview submit
     sync = codereview sync
+
 [merge]
-    tool = ksdiff
+    tool = diffmerge
+[mergetool]
+ keepBackup = false
+[difftool "diffmerge"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+
+[push]
+ default = matching
 
 # colour output for diffs
 [color]
@@ -48,11 +57,16 @@
     ui = true
 [color "diff"]
     whitespace = red reverse
+
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
     editor = vim
     autocrlf = input
     pager = less -r
     excludesfile = ~/.gitignore_global
+	hooksPath = ~/.git-hooks
 [diff "sopsdiffer"]
 	textconv = sops -d
+
+[rebase]
+	autosquash = true

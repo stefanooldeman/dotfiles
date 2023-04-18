@@ -30,7 +30,7 @@ ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(pip docker osx rvm vi-mode kube-ps1)
+plugins=(kubectl pip docker osx rvm vi-mode kube-ps1 zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -47,7 +47,6 @@ unsetopt AUTO_CD
 
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
-# eval "$(pyenv virtualenv-init -)"
 
 # INCLUDE SOME BINs manually on PATH
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
@@ -55,7 +54,6 @@ export SCALA_HOME=/usr/local/Cellar/scala/2.12.1
 SPARK_HOME=/opt/spark-1.6.0
 MAVEN_HOME=/opt/apache-maven-3.3.9
 export PATH=$MAVEN_HOME/bin:$SCALA_HOME/bin:$SPARK_HOME/bin:$PATH
-export PATH=$HOME/.pyenv/versions/3.6.8/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$HOME/bin:$PATH # self scripted shit
@@ -64,20 +62,18 @@ export PATH=$HOME/flutter/bin:$PATH
 # Go > 1.11 modules default install location
 export PATH=$HOME/go/bin:$PATH
 
-# replacing commands with GNU version
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
 # Add extra trivial scripts in ~/bin
 export PATH=$HOME/.jenv/bin:$PATH
-export CDPATH=.:~/dev/m2
+export CDPATH=.:~/dev/teamm2
 
-[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+# Ruby
+# To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded) add the following
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 # eval "$(pyenv init -)"
 alias "python3.5"="python3"
 export PATH=$HOME/bin/kafka_2.11-1.1.1/bin:$PATH
-export PATH=$HOME/dev/m2/m2-tools:$PATH
+export PATH=$HOME/dev/teamm2/m2-tools:$PATH
 
 # export PYENV_VERSION=2.7
 alias mongostart="mongod run --config /usr/local/Cellar/mongodb/2.0.0-x86_64/mongod.conf"
@@ -114,11 +110,20 @@ source $HOME/.bash_alias
 # pip zsh completion end
 ulimit -n 4096
 
-export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
-
+source "$HOME/.overwrite_bsd"
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+
+# Fucking node
+# export PATH="/usr/local/opt/node@12/bin:$PATH"
+# export LDFLAGS="-L/usr/local/opt/node@12/lib"
+# export CPPFLAGS="-I/usr/local/opt/node@12/include"
 
 eval "$(jenv init -)"
 # jenv enable-plugin maven
 # jenv enable-plugin export
+eval "$(rbenv init -)"
+export PATH="$(pyenv root)/shims:$PATH"
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
+source /Users/soldeman/.docker/init-zsh.sh || true # Added by Docker Desktop
