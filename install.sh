@@ -52,6 +52,8 @@ plugins[22]="https://github.com/rking/ag.vim.git"
 plugins[23]="https://github.com/vim-scripts/vim-auto-save.git"
 plugins[24]="https://github.com/gurpreetatwal/vim-avro.git"
 plugins[25]="https://github.com/benmills/vimux.git"
+plugins[26]="https://github.com/shumphrey/fugitive-gitlab.vim.git"
+plugins[17]="https://github.com/yuttie/comfortable-motion.vim"
 
 
 

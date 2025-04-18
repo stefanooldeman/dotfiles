@@ -11,7 +11,7 @@ set hlsearch
 set incsearch
 " Basic options
 set encoding=utf-8
-set scrolloff=5
+set scrolloff=4
 set showcmd
 set hidden
 set wildmenu
@@ -35,13 +35,13 @@ set nobackup
 
 " Tabs/spaces
 " set textwidth=79  " lines longer than 79 columns will be broken
-set shiftwidth=1  " operation >> indents 4 columns; << unindents 4 columns
+set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
 " display "real world tabs" set tabstop=4     " an hard TAB displays as 4 columns
 set expandtab     " insert spaces when hitting TABs
-set softtabstop=2 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
+set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set shiftround    " round indent to multiple of 'shiftwidth'
 set autoindent    " align the new line indent with the previous line
-set tabstop=1
+set tabstop=4
 
 " Do not fix line ending on end of file
 set nofixendofline
@@ -159,6 +159,9 @@ autocmd BufNewFile,BufRead *.ngx set filetype=nginx
 " vimcasts #24 - Auto-reload vimrc on save
 autocmd bufwritepost .vimrc source $MYVIMRC
 
+" remove delay for sql files when leaving insert mode with Ctrl+C
+" https://stackoverflow.com/questions/24931088/disable-omnicomplete-or-ftplugin-or-something-in-vim
+let g:omni_sql_no_default_maps = 1
 
 
 " ################ PATHOGEN PLUGIN LOADER #################################
@@ -203,7 +206,7 @@ endfunc
 " CtrlPBuffer
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_working_path_mode = 'ca'
-let g:ctrlp_root_markers = ['README.md', 'pom.xml', 'venv', 'tox.ini', 'Gemfile']
+let g:ctrlp_root_markers = ['.git', 'pom.xml', 'venv', 'tox.ini', 'Gemfile', 'pyproject.toml']
 
 
 
@@ -253,8 +256,7 @@ let tlist_css_settings = 'css;e:SECTIONS'
 
 
 " Vim Smooth Scroll
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll, 140, 1)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll, 140, 1)<CR>
+" https://vimawesome.com/plugin/comfortable-motion-vim
 
 
 " Ag/Ack find under cursor
@@ -288,3 +290,6 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 " Tagalong
 let g:tagalong_additional_filetypes = ['erb']
+
+" Fugative support for Gitlab
+" let g:fugitive_gitlab_domains = ['https://some-other-domain']

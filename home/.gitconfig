@@ -1,21 +1,27 @@
 [user]
     name = Stefano Oldeman
-	email = soldeman@bol.com
+    email = soldeman@bol.com
+
 [alias]
     s = status
     st = status
+    sd = diff --cached
     tree = log --graph --oneline --decorate
-    log = log --decorate
     branch = branch -vv
+    l = log --oneline --decorate HEAD...main
+    ll = log --oneline --decorate
     logline = log --pretty='%h %ad %s'
     releases = log --pretty='%h | %ci | %f | %aN' --grep 'Merge pull request'
     adog = log --all --decorate --oneline --graph
     f = fetch --prune --all
     fp = push --force-with-lease
 
+    go = rebase --continue
+    ready = rebase --continue
+    retry = rebase --continue
+    update = pull origin main
+
     co = checkout
-    ci = commit
-    br = branch
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 # Gerrit / Codereview  https://golang.org/doc/contribute.html
     change = codereview change
@@ -25,15 +31,26 @@
     submit = codereview submit
     sync = codereview sync
 
+
 [merge]
-    tool = diffmerge
+ guitool = intellij
+ tool = intellij
+
 [mergetool]
  keepBackup = false
-[difftool "diffmerge"]
-	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+ writeToTemp = true
+
+[mergetool "vimdiff"]
+ keepTemporaries = false
+
+[mergetool "intellij"]
+ keepTemporaries = true
+ hideResolved = true
+ cmd = idea merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
 
 [push]
  default = matching
+	autoSetupRemote = true
 
 # colour output for diffs
 [color]
@@ -68,5 +85,11 @@
 [diff "sopsdiffer"]
 	textconv = sops -d
 
+[pull]
+    rebase = true
+
 [rebase]
 	autosquash = true
+
+[init]
+	defaultBranch = main
