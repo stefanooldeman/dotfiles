@@ -10,7 +10,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-DEFAULT_USER="stefano"
+DEFAULT_USER="soldeman"
 ZSH_THEME="robbyrussell"
 
 # Set to this to use case-sensitive completion
@@ -49,15 +49,8 @@ unsetopt AUTO_CD
 
 
 # INCLUDE SOME BINs manually on PATH
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
-export SCALA_HOME=/usr/local/Cellar/scala/2.12.1
-SPARK_HOME=/opt/spark-1.6.0
-MAVEN_HOME=/opt/apache-maven-3.3.9
-export PATH=$MAVEN_HOME/bin:$SCALA_HOME/bin:$SPARK_HOME/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$HOME/bin:$PATH # self scripted shit
-export PATH=$HOME/flutter/bin:$PATH
 
 # Go > 1.11 modules default install location
 export PATH=$HOME/go/bin:$PATH
@@ -99,16 +92,13 @@ alias kctx="kubectx"
 alias kns="kubens"
 alias kps='kubectl get pods --sort-by=.metadata.creationTimestamp'
 
-source $HOME/.bash_alias
-
 # compctl -K _pip_completion pip
 # pip zsh completion end
 ulimit -n 4096
 
 export PATH="/opt/homebrew/bin:$PATH"
-source "$HOME/.overwrite_bsd"
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+# source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+# source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 
 eval "$(jenv init -)"
 jenv enable-plugin export
@@ -120,8 +110,8 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 # source /Users/soldeman/.docker/init-zsh.sh || true # Added by Docker Desktop
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 
 export PATH="$(pyenv root)/shims:$PATH"

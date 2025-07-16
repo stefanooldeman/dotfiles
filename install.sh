@@ -95,6 +95,14 @@ install_vim(){
   done
 }
 
+
+install_utils(){
+    # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    brew install git macvim tmux jenv pyenv nvm openjdk@21
+}
+
+
 symlink_home(){
   set -x
   local here=`pwd`
@@ -120,6 +128,8 @@ main(){
         usage ;;
     'vim')
       install_vim ;;
+    'utils')
+      install_utils ;;
     'symlink')
       symlink_home ;;
     'unlink')
